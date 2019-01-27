@@ -1,0 +1,23 @@
+---
+layout: command_storage
+title: List of commands
+prefix: db!
+---
+<table class="striped flow-text">
+    <thead>
+    <tr>
+        <th>Command</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    {% for command in layout.commands %}
+    <tr>
+        <td>{{ page.prefix }}{{ command.name }}</td>
+        <td>{{ command.description }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
