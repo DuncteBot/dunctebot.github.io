@@ -12,12 +12,11 @@ prefix: db!
     </thead>
 
     <tbody>
-
-    {% for command in layout.commands %}
-    <tr>
-        <td>{{ page.prefix }}{{ command.name }}</td>
-        <td>{{ command.description }}</td>
-    </tr>
-    {% endfor %}
+    {%- for command in layout.commands -%}
+        <tr>
+            <td>{{ page.prefix }}{{ command.name }}</td>
+            <td>{{ command.description }}</td>
+        </tr>
+    {%- endfor -%}
     </tbody>
 </table>
