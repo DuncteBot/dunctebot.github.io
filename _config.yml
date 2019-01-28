@@ -26,6 +26,9 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: DuncteBot
 github_username:  DuncteBot
 
+# Stuff to post to the api
+chapta_sitekey: 6LfjTkcUAAAAAEmamxPpg5GrcS0n5Mb9_OQp96Sz
+
 # Build settings
 #markdown: kramdown
 #theme: minima
