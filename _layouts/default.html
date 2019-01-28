@@ -53,7 +53,7 @@
                     <li{% if page.title == "Home" %} class="active"{% endif %}><a href="/">Home</a></li>
                     <li{% if page.title == "List of commands" %} class="active"{% endif %}><a href="/commands">Commands</a></li>
                     <li{% if page.title == "Leave a suggestion" %} class="active"{% endif %}><a href="/suggest">Suggest</a></li>
-                    <li{% if page.title == "Dashboard" %} class="active"{% endif %}><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="{{ site.dashboard_domain }}">Dashboard</a></li>
                 </ul>
             </div>
         </nav>
@@ -63,7 +63,7 @@
         <li{% if page.title == "Home" %} class="active"{% endif %}><a href="/">Home</a></li>
         <li{% if page.title == "List of commands" %} class="active"{% endif %}><a href="/commands">Commands</a></li>
         <li{% if page.title == "Leave a suggestion" %} class="active"{% endif %}><a href="/suggest">Suggest</a></li>
-        <li{% if page.title == "Dashboard" %} class="active"{% endif %}><a href="/dashboard">Dashboard</a></li>
+        <li><a href="{{ site.dashboard_domain }}">Dashboard</a></li>
     </ul>
 </header>
 
