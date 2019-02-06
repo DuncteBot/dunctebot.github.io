@@ -1,276 +1,272 @@
 ---
 layout: default
 commands:
-  - name: togglefilterinvites
-    description: "Toggles if the bot should delete messages that contain invites<br />Usage: <code>db!togglefilterinvites</code>"
-  - name: shorten
-    description: "Shortens a url<br />Usage: <code>db!shorten &lt;link to shorten&gt;</code>"
-  - name: repeat
-    description: "Makes the player repeat the currently playing song"
-  - name: kick
-    description: "Kicks a user.<br />Usage: <code>db!kick &lt;@user&gt; [reason]</code>"
-  - name: lyrics
-    description: "Shows the lyrics to the current song"
-  - name: purgechannel
-    description: "Purges a text channel.<br />Usage: <code>db!purgechannel &lt;#text-channel&gt;</code>"
-  - name: token
-    description: "Tries to get as much info about a token as possible<br />Usage: <code>db!token &lt;token of a discord bot&gt;</code>"
+  - name: achievement
+    description: "You got an achievement!<br />Usage: <code>db!achievement &lt;text&gt;</code>"
+  - name: alpaca
+    description: "Here is an alpaca"
   - name: alpha
     description: "Ask Wolfram|Alpha all your geeky questions"
-  - name: cookie
-    description: "<code>db!cookie</code> =&gt; blobnomcookie.<br /><code>db!trigger</code> =&gt; Use when you are triggered.<br /><code>db!spam</code> =&gt; What do you think 😏<br /><code>db!wam</code> =&gt; You need more WAM!.<br /><code>db!mineh</code> =&gt; HERE COMES MINEH!<br /><code>db!invite</code> =&gt; Gives you the bot invite<br /><code>db!uptime</code> =&gt; Shows the bot uptime<br /><code>db!quote</code> =&gt; Shows an inspiring quote<br /><code>db!xkcd</code> =&gt; Get a random comic from xkcd.com<br />Aliases: db!trigger, db!spam, db!wam, db!mineh, db!invite, db!uptime, db!quote, db!xkcd, db!screenfetch"
-  - name: pccheck
-    description: "WHoops get your pc checked<br />Usage: <code>db!pccheck &lt;reason&gt;</code>"
-  - name: shit
-    description: "<code>db!shit &lt;message&gt;</code> =&gt; Exclaim that something is shit.<code>db!pluralshit &lt;message&gt;</code> =&gt; Exclaim that things are shit."
-  - name: yesno
-    description: "Chooses between yes or no<br />Usage: <code>db!yesno</code>"
-  - name: delete
-    description: "Creates a Delete button.<br />Usage: <code>db!delete &lt;text&gt;</code>"
-  - name: discordmeme
-    description: "Gives you a discord meme<br />Usage: <code>db!discordmeme</code>"
-  - name: setratelimits
-    description: "Sets our cooldown in minutes for un-muting your spammer of choice.<br />Usage: <code>db!setratelimits &lt;1|2|3|4|5|6&gt;</code><br />Example: db!setratelimits20|45|60|120|240|2400"
-  - name: dehoist
-    description: "De-hoists a user<br />Usage: <code>db!dehoist &lt;@user&gt;</code>"
-  - name: hug
-    description: "<code>db!hug</code> =&gt; Hug a user<br /><code>db!lewd</code> =&gt; When things get to lewd<br /><code>db!pat</code> =&gt; Pat a user<br /><code>db!punch</code> =&gt; Punch a user in their face<br /><code>db!shrug</code> =&gt; ¯\_(ツ)_/¯<br /><code>db!lick</code> =&gt; Lick a user<br /><code>db!owo</code> =&gt; OwO what's this<br /><code>db!weeb &lt;category&gt;</code> =&gt; Gives you a random image from weeb.sh with that type<br />Aliases: db!lewd, db!pat, db!punch, db!shrug, db!lick, db!owo, db!weeb, db!b1nzy, db!megumin"
-  - name: softban
-    description: "Kicks a user from the guild <strong>(THIS WILL DELETE MESSAGES)</strong>"
-  - name: birb
-    description: "Here is a birb"
-  - name: csshumor
-    description: "Gives you a funny css joke"
-  - name: guildinfo
-    description: "Show some stats"
-  - name: eval
-    description: "Evaluate java code on the bot<br />Usage: <code>db!eval &lt;java/groovy code&gt;</code>"
-  - name: list
-    description: "shows the current queue"
-  - name: scroll
-    description: "The scroll of truth<br />Usage: <code>db!scroll &lt;text&gt;</code>"
-  - name: skip
-    description: "Skips the current track."
-  - name: issue
-    description: "Reports heavy and weird issues to the developers.<br />This will create an invite to your server, so we can join and help you directly.<br />Those issues are hard to explain / resolve if we can't see nor read the chat or other things that happen."
-  - name: autorole
-    description: "Gives members a role when they join<br />Usage: <code>db!autorole &lt;role&gt;</code>"
-  - name: clint
-    description: "Shows a picture of Clint staring at something on a monitor.<br />Usage: <code>db!clint [image url]</code>"
-  - name: seek
-    description: "seek in the currently playing track<br />Usage: <code>db!seek &lt;minutes:seconds&gt;</code><br />Examples: <code>db!seek 04:20</code><br /><code>db!seek 00:50</code><br />"
-  - name: toggleswearfilter
-    description: "Turns the swearword filter on or off<br />Usage: <code>db!toggleswearfilter</code><br />Aliases: db!enableswearfilter, db!disableswearfilter"
-  - name: readd
-    description: "Readd the current track to the end of the queue"
-  - name: kickme
-    description: "Kickes you off the server<br />Usage: <code>db!kickme</code>"
-  - name: lewdneko
-    description: "<code>db!lewdneko</code> =&gt; Gives a very lewd neko<br /><code>db!carsandhentai</code> =&gt; Delet this<br /><code>db!lewdkitsune</code> =&gt; Shows you a lewd kitsune<br /><code>db!hentai</code> =&gt; Just some hentai<br />Aliases: db!carsandhentai, db!lewdkitsune, db!hentai"
-  - name: image
-    description: "Searches for an image on google<br />Usage: <code>db!image &lt;search term&gt;</code>"
-  - name: coin
-    description: "flips a coin.<br />Usage: <code>db!coin</code>"
-  - name: changelog
-    description: "shows the changelog on the bot"
-  - name: ship
-    description: "Ship 2 people<br />Usage: <code>db!ship &lt;@user&gt; &lt;@user&gt;</code>"
-  - name: join
-    description: "Makes the bot join the voice channel that you are in."
-  - name: customcommand
-    description: "Create, run and delete custom commands<br /><code>db!customcommand list</code> =&gt; Shows a list of all the custom commands<br /><code>db!customcommand new &lt;name&gt; &lt;text&gt;</code> =&gt; Creates a new custom command<br /><code>db!customcommand edit &lt;name&gt; &lt;text&gt;</code> =&gt; Edits a custom command<br /><code>db!customcommand raw &lt;name&gt;</code> =&gt; Shows the raw value of a custom command<br /><code>db!customcommand delete &lt;name&gt;</code> =&gt; Deletes a custom command"
-  - name: setcolor
-    description: "Sets the colors of the embeds from the bot.<br />Usage: <code>db!setcolor &lt;hex color&gt;</code>"
-  - name: drake
-    description: "Did you type your search wrong?<br />Usage: <code>db!drake &lt;Top text&gt;|&lt;Bottom text&gt;</code>"
-  - name: delet
-    description: "Delet this<br />Usage: <code>db!delet</code>"
-  - name: voicekick
-    description: "Kicks a user from the voice channel<br />Usage: <code>db!voicekick &lt;@user/voice channel&gt;</code>"
-  - name: clearleftguilds
-    description: "Clears the guilds that we have left from the cache and/or database<br />Usage: <code>db!clearleftguilds [--clear-db]</code>"
   - name: announce
     description: "Announces a message.<br />Usage <code>db!announce &lt;#channel&gt; &lt;message&gt;</code>"
+  - name: autorole
+    description: "Gives members a role when they join<br />Usage: <code>db!autorole &lt;role&gt;</code>"
   - name: ban
     description: "Bans a user from the guild <strong>(THIS WILL DELETE MESSAGES)</strong><br />Usage: <code>db!ban &lt;@user&gt; &lt;Reason&gt;</code>"
+  - name: birb
+    description: "Here is a birb"
   - name: blackandwhite
     description: "Overlays a b&amp;w filter to the provided image.<br />Usage: <code>db!blackandwhite [image url]</code>"
-  - name: didyoumean
-    description: "Did you type your search wrong?<br />Usage: <code>db!didyoumean &lt;Top text&gt;|&lt;Bottom text&gt;</code>"
   - name: blur
     description: "Overlays a blur filter to the provided image.<br />Usage: <code>db!blur [image url]</code>"
-  - name: unban
-    description: "Unbans a user<br />Usage: <code>db!unban &lt;user&gt;</code>"
-  - name: testtag
-    description: "Test your jagtag format before you save it as custom command etc.<br />Usage: <code>db!testtag &lt;JagTag syntax&gt;</code>"
-  - name: loadingbar
-    description: "Displays a progress bar that shows how much of the year has passed"
-  - name: ping
-    description: "Shows the delay from the bot to the discord servers."
-  - name: kitty
-    description: "A alternative cat command with more kitties"
-  - name: togglespamfilter
-    description: "Toggles whether we should handle your incoming spam.<br />Usage: <code>db!togglespamfilter</code>"
-  - name: volume
-    description: "Sets the new volume on the player.<br />Usage: <code>db!volume [new volume]</code>"
-  - name: stop
-    description: "Stops the music player."
-  - name: thesearch
-    description: "Go on a journey to find intelligent life.<br />Usage: <code>db!thesearch &lt;message&gt;</code>"
-  - name: joke
-    description: "See a funny joke. Dad's love them!<br />Usage: <code>db!joke</code>"
-  - name: toggleannouncetracks
-    description: "Toggles if the player should announce the next playing track<br />Usage: <code>db!toggleannouncetracks</code>"
-  - name: yoda
-    description: "Convert your sentences into yoda speak.<br />Usage: <code>db!yoda &lt;A sentence.&gt;</code>"
-  - name: pronounscheck
-    description: "Check someones pronouns.<br />Usage: <code>db!pronounscheck [user]</code><br />Pronouns can be set via <code>db!setpronouns</code>"
-  - name: save
-    description: "Saves a playlist into a file with can be loaded with db!load"
-  - name: setwelcomechannel
-    description: "Sets the channel that displays the welcome and leave messages<br />Usage: <code>db!setwelcomechannel &lt;channel&gt;</code><br />Aliases: db!setleavechannel"
-  - name: setprefix
-    description: "Sets the new prefix<br />Usage: <code>db!setprefix &lt;prefix&gt;</code>"
-  - name: slowmode
-    description: "Enable slowmode on in the current channel.<br />Usage: <code>db!slowmode &lt;seconds (1-120)&gt;</code><br />Use <code>db!slowmode off</code> to turn slowmode off"
-  - name: play
-    description: "Make the bot play song.<br />Usage: <code>db!play [url/search term]</code>"
+  - name: botinfo
+    description: "Gets some info about the bot<br />Usage: <code>db!botinfo</code>"
+  - name: captcha
+    description: "Checks if you are a robot<br />Usage: <code>db!captcha &lt;text&gt;</code>"
+  - name: cat
+    description: "here is a cat."
+  - name: changelog
+    description: "shows the changelog on the bot"
+  - name: chat
+    description: "Have a chat with dunctebot<br />Usage: <code>db!chat &lt;message&gt;</code>"
+  - name: cleanup
+    description: "Performs a cleanup in the channel where the command is run.<br />To clear an entire channel it's better to use <code>db!purgechannel</code><br />Usage: <code>db!cleanup[ammount] [keep-pinned] [bots-only]</code>"
+  - name: clearleftguilds
+    description: "Clears the guilds that we have left from the cache and/or database<br />Usage: <code>db!clearleftguilds [--clear-db]</code>"
+  - name: clint
+    description: "Shows a picture of Clint staring at something on a monitor.<br />Usage: <code>db!clint [image url]</code>"
+  - name: coin
+    description: "flips a coin.<br />Usage: <code>db!coin</code>"
+  - name: colour
+    description: "Shows a random colour."
+  - name: cookie
+    description: "<code>db!cookie</code> =&gt; blobnomcookie.<br /><code>db!trigger</code> =&gt; Use when you are triggered.<br /><code>db!spam</code> =&gt; What do you think 😏<br /><code>db!wam</code> =&gt; You need more WAM!.<br /><code>db!mineh</code> =&gt; HERE COMES MINEH!<br /><code>db!invite</code> =&gt; Gives you the bot invite<br /><code>db!uptime</code> =&gt; Shows the bot uptime<br /><code>db!quote</code> =&gt; Shows an inspiring quote<br /><code>db!xkcd</code> =&gt; Get a random comic from xkcd.com<br />Aliases: db!trigger, db!spam, db!wam, db!mineh, db!invite, db!uptime, db!quote, db!xkcd, db!screenfetch"
+  - name: csshumor
+    description: "Gives you a funny css joke"
+  - name: customcommand
+    description: "Create, run and delete custom commands<br /><code>db!customcommand list</code> =&gt; Shows a list of all the custom commands<br /><code>db!customcommand new &lt;name&gt; &lt;text&gt;</code> =&gt; Creates a new custom command<br /><code>db!customcommand edit &lt;name&gt; &lt;text&gt;</code> =&gt; Edits a custom command<br /><code>db!customcommand raw &lt;name&gt;</code> =&gt; Shows the raw value of a custom command<br /><code>db!customcommand delete &lt;name&gt;</code> =&gt; Deletes a custom command"
+  - name: deepfry
+    description: "Overlays a deepfry filter to the provided image.<br />Usage: <code>db!deepfry [image url]</code>"
+  - name: dehoist
+    description: "De-hoists a user<br />Usage: <code>db!dehoist &lt;@user&gt;</code>"
+  - name: delet
+    description: "Delet this<br />Usage: <code>db!delet</code>"
+  - name: delete
+    description: "Creates a Delete button.<br />Usage: <code>db!delete &lt;text&gt;</code>"
+  - name: dialog
+    description: "Gives you a nice dialog<br />Usage: <code>db!dialog &lt;text&gt;</code>"
+  - name: didyoumean
+    description: "Did you type your search wrong?<br />Usage: <code>db!didyoumean &lt;Top text&gt;|&lt;Bottom text&gt;</code>"
+  - name: discordmeme
+    description: "Gives you a discord meme<br />Usage: <code>db!discordmeme</code>"
+  - name: dog
+    description: "here is a dog."
+  - name: donate
+    description: "Help keeping the bot up by donating<br />Usage: <code>db!donate [amount]</code>"
+  - name: drake
+    description: "Did you type your search wrong?<br />Usage: <code>db!drake &lt;Top text&gt;|&lt;Bottom text&gt;</code>"
+  - name: eval
+    description: "Evaluate java code on the bot<br />Usage: <code>db!eval &lt;java/groovy code&gt;</code>"
+  - name: facts
+    description: "Show show the facts<br />Usage: <code>db!facts &lt;text&gt;</code>"
+  - name: flag
+    description: "Overlay your profile picture with a pride flag.<br />Usage: <code>db!flag &lt;flag/list&gt; [username]</code>"
+  - name: flip
+    description: "Flips a user.<br />Usage: <code>db!flip [@user]</code>"
+  - name: forcedisconnect
+    description: "Force disconnects the bot from music for when the bot is stuck"
+  - name: freerealestate
+    description: "It's free real estate<br />Usage: <code>db!freerealestate &lt;text&gt;</code>"
+  - name: guildinfo
+    description: "Show some stats"
+  - name: hackban
+    description: "Ban a user before he/she can join your guild.<br />Usage: <code>db!hackban &lt;userId...&gt;</code>"
+  - name: help
+    description: "Shows a list of all the commands.<br />Usage: <code>db!help [command]</code>"
+  - name: hug
+    description: "<code>db!hug</code> =&gt; Hug a user<br /><code>db!lewd</code> =&gt; When things get to lewd<br /><code>db!pat</code> =&gt; Pat a user<br /><code>db!punch</code> =&gt; Punch a user in their face<br /><code>db!shrug</code> =&gt; ¯\_(ツ)_/¯<br /><code>db!lick</code> =&gt; Lick a user<br /><code>db!owo</code> =&gt; OwO what's this<br /><code>db!weeb &lt;category&gt;</code> =&gt; Gives you a random image from weeb.sh with that type<br />Aliases: db!lewd, db!pat, db!punch, db!shrug, db!lick, db!owo, db!weeb, db!b1nzy, db!megumin"
+  - name: image
+    description: "Searches for an image on google<br />Usage: <code>db!image &lt;search term&gt;</code>"
+  - name: insta
+    description: "Get the latest picture of someones profile<br />Usage: <code>db!insta &lt;username&gt;</code>"
   - name: invert
     description: "Overlays a invert filter to the provided image.<br />Usage: <code>db!invert [image url]</code>"
-  - name: ttb
-    description: "Convert your text to bricks"
-  - name: settings
-    description: "Shows the current settings<br />Usage: <code>db!settings</code><br />Aliases: db!options"
-  - name: reverse
-    description: "reverses a string<br />Usage: <code>db!reverse &lt;text&gt;</code>"
-  - name: tempban
-    description: "Temporally bans a user from the guild <strong>(THIS WILL DELETE MESSAGES)</strong><br />Usage: <code>db!tempban &lt;@user&gt; &lt;time&gt;&lt;m/h/d/w/M/Y&gt; [Reason]</code>"
-  - name: suggest
-    description: "Suggest something to be in Dunctebot!"
-  - name: setleavemessage
-    description: "Sets the message that the bot shows when a member leaves<br />Usage: <code>db!setleavemessage &lt;leave message&gt;</code>"
-  - name: warn
-    description: "Warns a member.<br />When a member has 3 warnings he/she will be kicked<br />Usage: <code>db!warn &lt;@user&gt; [reason]</code>"
-  - name: mute
-    description: "Mute a user.<br />Usage: <code>db!mute &lt;@user&gt; &lt;reason&gt;</code>"
+  - name: issue
+    description: "Reports heavy and weird issues to the developers.<br />This will create an invite to your server, so we can join and help you directly.<br />Those issues are hard to explain / resolve if we can't see nor read the chat or other things that happen."
+  - name: iwanttodie
+    description: "You have decided that you want to die<br />Usage: <code>db!iwanttodie &lt;text&gt;</code>"
+  - name: join
+    description: "Makes the bot join the voice channel that you are in."
+  - name: joke
+    description: "See a funny joke. Dad's love them!<br />Usage: <code>db!joke</code>"
+  - name: jokeoverhead
+    description: "You just got wooshed<br />Usage: <code>db!jokeoverhead [@user/url]</code>"
+  - name: kick
+    description: "Kicks a user.<br />Usage: <code>db!kick &lt;@user&gt; [reason]</code>"
+  - name: kickme
+    description: "Kickes you off the server<br />Usage: <code>db!kickme</code>"
+  - name: kitty
+    description: "A alternative cat command with more kitties"
   - name: kpop
     description: "Gives you a random kpop member, command suggestion by Exa<br />Usage: <code>db!kpop [search term]</code>"
   - name: leave
     description: "Makes the bot leave your channel."
-  - name: vcautorole
-    description: "Gives a role to a user when they join a specified voice channel<br />Usage: <code>db!vcautorole add &lt;voice channel&gt; &lt;role&gt;</code><br /><code>db!vcautorole remove &lt;voice channel&gt;</code><br /><code>db!vcautorole off</code><br /><code>db!vcautorole list</code>"
-  - name: dialog
-    description: "Gives you a nice dialog<br />Usage: <code>db!dialog &lt;text&gt;</code>"
-  - name: saturate
-    description: "Overlays a darken filter to the provided image.<br />Usage: <code>db!saturate [image url]</code>"
-  - name: deepfry
-    description: "Overlays a deepfry filter to the provided image.<br />Usage: <code>db!deepfry [image url]</code>"
-  - name: stats
-    description: "Shows some nerdy stats about the bot"
-  - name: update
-    description: "Update the bot and restart"
-  - name: shardinfo
-    description: "Get information about all things shards"
-  - name: donate
-    description: "Help keeping the bot up by donating<br />Usage: <code>db!donate [amount]</code>"
-  - name: unlockemote
-    description: "Unlocks an emote if it was locked<br />Usage: <code>db!unlockemote &lt;:emote:&gt;</code><br />Please note that you have to mention the emote due the bot not caching emotes for their names"
-  - name: search
-    description: "Make the bot play song.<br />Usage: <code>db!search [search term]</code>"
-  - name: freerealestate
-    description: "It's free real estate<br />Usage: <code>db!freerealestate &lt;text&gt;</code>"
-  - name: shuffle
-    description: "Shuffles the current queue"
-  - name: translate
-    description: "Translate a text from English to another language<br />Usage: <code>db!translate &lt;destination language&gt; &lt;text&gt;</code>"
-  - name: dog
-    description: "here is a dog."
-  - name: unshorten
-    description: "Unshorten a short url<br />Usage: <code>db!unshorten &lt;short url&gt;</code>"
-  - name: setpronouns
-    description: "Set your pronouns to people can check them with <code>db!pronounscheck</code><br />Usage: <code>db!setpronouns &lt;pronouns&gt; [--plural]</code><br />Examples of pronouns are:<br /><pre><code>they/them/their/theirs<br />she/her/her/hers<br />he/him/his/his<br />ze/zir/zir/zirs<br />xe/xir/xir/xirs</code></pre><br />Use the <code>--plural</code> flag to mark your pronouns as plural (is vs are)"
-  - name: nowplaying
-    description: "Prints information about the currently playing song (title, current time)"
-  - name: facts
-    description: "Show show the facts<br />Usage: <code>db!facts &lt;text&gt;</code>"
-  - name: achievement
-    description: "You got an achievement!<br />Usage: <code>db!achievement &lt;text&gt;</code>"
-  - name: forcedisconnect
-    description: "Force disconnects the bot from music for when the bot is stuck"
-  - name: toggleautodehoist
-    description: "Toggles if if the bot should auto de-hoist users<br />Usage: <code>db!toggleautodehoist</code>"
-  - name: load
-    description: "Loads a given playlist file"
-  - name: setlogchannel
-    description: "Sets the channel to log messages in<br />Usage: <code>db!setlogchannel &lt;text channel&gt;</code>"
-  - name: setjoinmessage
-    description: "Sets the message that the bot shows when a new member joins<br />Usage: <code>db!setjoinmessage &lt;join message&gt;</code><br />Aliases: db!setwelcomemessage"
-  - name: seal
-    description: "Here is a nice seal"
-  - name: colour
-    description: "Shows a random colour."
-  - name: restartshard
-    description: "Restart the bot or a shard<br />Usage: db!restartshard [shard id]`"
-  - name: playrw
-    description: "Make the bot play song.<br />Usage: <code>db!playrw [url/search term]</code>"
-  - name: cat
-    description: "here is a cat."
-  - name: restart
-    description: "Start the current track back to the beginning"
-  - name: pplay
-    description: "Add a playlist to the queue."
+  - name: lewdneko
+    description: "<code>db!lewdneko</code> =&gt; Gives a very lewd neko<br /><code>db!carsandhentai</code> =&gt; Delet this<br /><code>db!lewdkitsune</code> =&gt; Shows you a lewd kitsune<br /><code>db!hentai</code> =&gt; Just some hentai<br />Aliases: db!carsandhentai, db!lewdkitsune, db!hentai"
   - name: linus
     description: "Shows a picture of Linus pointing to something on a monitor.<br />Usage: <code>db!linus [image url]</code>"
+  - name: list
+    description: "shows the current queue"
   - name: llama
     description: "Here is a llama"
-  - name: flip
-    description: "Flips a user.<br />Usage: <code>db!flip [@user]</code>"
-  - name: captcha
-    description: "Checks if you are a robot<br />Usage: <code>db!captcha &lt;text&gt;</code>"
-  - name: botinfo
-    description: "Gets some info about the bot<br />Usage: <code>db!botinfo</code>"
-  - name: iwanttodie
-    description: "You have decided that you want to die<br />Usage: <code>db!iwanttodie &lt;text&gt;</code>"
-  - name: cleanup
-    description: "Performs a cleanup in the channel where the command is run.<br />To clear an entire channel it's better to use <code>db!purgechannel</code><br />Usage: <code>db!cleanup[ammount] [keep-pinned] [bots-only]</code>"
-  - name: pause
-    description: "Pauses the current song"
-  - name: salty
-    description: "Someones being salty today<br />Usage: <code>db!salty [@user/url]</code>"
-  - name: flag
-    description: "Overlay your profile picture with a pride flag.<br />Usage: <code>db!flag &lt;flag/list&gt; [username]</code>"
-  - name: urban
-    description: "Search the urban dictionary.<br />Usage: <code>db!urban &lt;search term&gt;</code>"
-  - name: setdescription
-    description: "Set a custom description in db!guildinfo<br />Usage: <code>db!setdescription &lt;description&gt;</code>"
-  - name: help
-    description: "Shows a list of all the commands.<br />Usage: <code>db!help [command]</code>"
-  - name: alpaca
-    description: "Here is an alpaca"
-  - name: hackban
-    description: "Ban a user before he/she can join your guild.<br />Usage: <code>db!hackban &lt;userId...&gt;</code>"
-  - name: insta
-    description: "Get the latest picture of someones profile<br />Usage: <code>db!insta &lt;username&gt;</code>"
-  - name: togglekickmode
-    description: "Toggles whether we should kick or assign a role for spammers.<br />Usage: <code>db!togglekickmode</code>"
-  - name: togglejoinmessage
-    description: "Turns the join message on or off<br />Usage: <code>db!togglejoinmessage</code><br />Aliases: db!enablejoinmessage, db!disablejoinmessage"
+  - name: load
+    description: "Loads a given playlist file"
+  - name: loadingbar
+    description: "Displays a progress bar that shows how much of the year has passed"
   - name: lockemote
     description: "Lock an emote to some roles.<br />Usage: <code>db!lockemote &lt;emote&gt; &lt;@role...&gt;</code><br />Please note that you can't use the emote anymore if you don't have any of the specified roles,<br />even if you have administrator permission"
-  - name: chat
-    description: "Have a chat with dunctebot<br />Usage: <code>db!chat &lt;message&gt;</code>"
-  - name: jokeoverhead
-    description: "You just got wooshed<br />Usage: <code>db!jokeoverhead [@user/url]</code>"
-  - name: tempmute
-    description: "Temporally mutes a user on the guild<br />Usage: <code>db!tempmute &lt;@user&gt; &lt;time&gt;&lt;m/h/d/w/M/Y&gt; [Reason]</code>"
-  - name: unmute
-    description: "Unmutes a user if they are muted<br />Usage: <code>db!unmute &lt;@user&gt;</code>"
-  - name: userinfo
-    description: "Get information from yourself or from another user.<br />Usage: <code>db!userinfo [username]</code>"
+  - name: lyrics
+    description: "Shows the lyrics to the current song"
+  - name: mute
+    description: "Mute a user.<br />Usage: <code>db!mute &lt;@user&gt; &lt;reason&gt;</code>"
   - name: muterole
     description: "Gives members a role when they spam.<br />Usage: <code>db!muterole &lt;role&gt;</code><br />Aliases: db!spamrole"
+  - name: nowplaying
+    description: "Prints information about the currently playing song (title, current time)"
+  - name: pause
+    description: "Pauses the current song"
+  - name: pccheck
+    description: "WHoops get your pc checked<br />Usage: <code>db!pccheck &lt;reason&gt;</code>"
+  - name: ping
+    description: "Shows the delay from the bot to the discord servers."
+  - name: play
+    description: "Make the bot play song.<br />Usage: <code>db!play [url/search term]</code>"
+  - name: playrw
+    description: "Make the bot play song.<br />Usage: <code>db!playrw [url/search term]</code>"
+  - name: pplay
+    description: "Add a playlist to the queue."
+  - name: pronounscheck
+    description: "Check someones pronouns.<br />Usage: <code>db!pronounscheck [user]</code><br />Pronouns can be set via <code>db!setpronouns</code>"
+  - name: purgechannel
+    description: "Purges a text channel.<br />Usage: <code>db!purgechannel &lt;#text-channel&gt;</code>"
   - name: radio
     description: "Adds a radio http stream to your queue and goes to it!<br /><strong>YOU HAVE TO UPVOTE!</strong><br />Yes it skips all songs until it finds the stream it may bug if the current stream has the same url.<br />Usage: <code>db!radio &lt;(full)list/station name&gt;</code>"
+  - name: readd
+    description: "Readd the current track to the end of the queue"
+  - name: repeat
+    description: "Makes the player repeat the currently playing song"
+  - name: restart
+    description: "Start the current track back to the beginning"
+  - name: reverse
+    description: "reverses a string<br />Usage: <code>db!reverse &lt;text&gt;</code>"
+  - name: salty
+    description: "Someones being salty today<br />Usage: <code>db!salty [@user/url]</code>"
+  - name: saturate
+    description: "Overlays a darken filter to the provided image.<br />Usage: <code>db!saturate [image url]</code>"
+  - name: save
+    description: "Saves a playlist into a file with can be loaded with db!load"
+  - name: scroll
+    description: "The scroll of truth<br />Usage: <code>db!scroll &lt;text&gt;</code>"
+  - name: seal
+    description: "Here is a nice seal"
+  - name: search
+    description: "Make the bot play song.<br />Usage: <code>db!search [search term]</code>"
+  - name: seek
+    description: "seek in the currently playing track<br />Usage: <code>db!seek &lt;minutes:seconds&gt;</code><br />Examples: <code>db!seek 04:20</code><br /><code>db!seek 00:50</code><br />"
+  - name: setcolor
+    description: "Sets the colors of the embeds from the bot.<br />Usage: <code>db!setcolor &lt;hex color&gt;</code>"
+  - name: setdescription
+    description: "Set a custom description in db!guildinfo<br />Usage: <code>db!setdescription &lt;description&gt;</code>"
+  - name: setjoinmessage
+    description: "Sets the message that the bot shows when a new member joins<br />Usage: <code>db!setjoinmessage &lt;join message&gt;</code><br />Aliases: db!setwelcomemessage"
+  - name: setleavemessage
+    description: "Sets the message that the bot shows when a member leaves<br />Usage: <code>db!setleavemessage &lt;leave message&gt;</code>"
+  - name: setlogchannel
+    description: "Sets the channel to log messages in<br />Usage: <code>db!setlogchannel &lt;text channel&gt;</code>"
+  - name: setprefix
+    description: "Sets the new prefix<br />Usage: <code>db!setprefix &lt;prefix&gt;</code>"
+  - name: setpronouns
+    description: "Set your pronouns to people can check them with <code>db!pronounscheck</code><br />Usage: <code>db!setpronouns &lt;pronouns&gt; [--plural]</code><br />Examples of pronouns are:<br /><pre><code>they/them/their/theirs<br />she/her/her/hers<br />he/him/his/his<br />ze/zir/zir/zirs<br />xe/xir/xir/xirs</code></pre><br />Use the <code>--plural</code> flag to mark your pronouns as plural (is vs are)"
+  - name: setratelimits
+    description: "Sets our cooldown in minutes for un-muting your spammer of choice.<br />Usage: <code>db!setratelimits &lt;1|2|3|4|5|6&gt;</code><br />Example: db!setratelimits20|45|60|120|240|2400"
+  - name: settings
+    description: "Shows the current settings<br />Usage: <code>db!settings</code><br />Aliases: db!options"
+  - name: setwelcomechannel
+    description: "Sets the channel that displays the welcome and leave messages<br />Usage: <code>db!setwelcomechannel &lt;channel&gt;</code><br />Aliases: db!setleavechannel"
+  - name: shardinfo
+    description: "Get information about all things shards"
+  - name: ship
+    description: "Ship 2 people<br />Usage: <code>db!ship &lt;@user&gt; &lt;@user&gt;</code>"
+  - name: shit
+    description: "<code>db!shit &lt;message&gt;</code> =&gt; Exclaim that something is shit.<code>db!pluralshit &lt;message&gt;</code> =&gt; Exclaim that things are shit."
+  - name: shorten
+    description: "Shortens a url<br />Usage: <code>db!shorten &lt;link to shorten&gt;</code>"
+  - name: shuffle
+    description: "Shuffles the current queue"
+  - name: skip
+    description: "Skips the current track."
+  - name: slowmode
+    description: "Enable slowmode on in the current channel.<br />Usage: <code>db!slowmode &lt;seconds (1-120)&gt;</code><br />Use <code>db!slowmode off</code> to turn slowmode off"
+  - name: softban
+    description: "Kicks a user from the guild <strong>(THIS WILL DELETE MESSAGES)</strong>"
+  - name: stats
+    description: "Shows some nerdy stats about the bot"
+  - name: stop
+    description: "Stops the music player."
+  - name: suggest
+    description: "Suggest something to be in Dunctebot!"
+  - name: tempban
+    description: "Temporally bans a user from the guild <strong>(THIS WILL DELETE MESSAGES)</strong><br />Usage: <code>db!tempban &lt;@user&gt; &lt;time&gt;&lt;m/h/d/w/M/Y&gt; [Reason]</code>"
+  - name: tempmute
+    description: "Temporally mutes a user on the guild<br />Usage: <code>db!tempmute &lt;@user&gt; &lt;time&gt;&lt;m/h/d/w/M/Y&gt; [Reason]</code>"
+  - name: testtag
+    description: "Test your jagtag format before you save it as custom command etc.<br />Usage: <code>db!testtag &lt;JagTag syntax&gt;</code>"
+  - name: thesearch
+    description: "Go on a journey to find intelligent life.<br />Usage: <code>db!thesearch &lt;message&gt;</code>"
+  - name: toggleannouncetracks
+    description: "Toggles if the player should announce the next playing track<br />Usage: <code>db!toggleannouncetracks</code>"
+  - name: toggleautodehoist
+    description: "Toggles if if the bot should auto de-hoist users<br />Usage: <code>db!toggleautodehoist</code>"
+  - name: togglefilterinvites
+    description: "Toggles if the bot should delete messages that contain invites<br />Usage: <code>db!togglefilterinvites</code>"
+  - name: togglejoinmessage
+    description: "Turns the join message on or off<br />Usage: <code>db!togglejoinmessage</code><br />Aliases: db!enablejoinmessage, db!disablejoinmessage"
+  - name: togglekickmode
+    description: "Toggles whether we should kick or assign a role for spammers.<br />Usage: <code>db!togglekickmode</code>"
+  - name: togglespamfilter
+    description: "Toggles whether we should handle your incoming spam.<br />Usage: <code>db!togglespamfilter</code>"
+  - name: toggleswearfilter
+    description: "Turns the swearword filter on or off<br />Usage: <code>db!toggleswearfilter</code><br />Aliases: db!enableswearfilter, db!disableswearfilter"
+  - name: token
+    description: "Tries to get as much info about a token as possible<br />Usage: <code>db!token &lt;token of a discord bot&gt;</code>"
+  - name: translate
+    description: "Translate a text from English to another language<br />Usage: <code>db!translate &lt;destination language&gt; &lt;text&gt;</code>"
+  - name: ttb
+    description: "Convert your text to bricks"
+  - name: unban
+    description: "Unbans a user<br />Usage: <code>db!unban &lt;user&gt;</code>"
+  - name: unlockemote
+    description: "Unlocks an emote if it was locked<br />Usage: <code>db!unlockemote &lt;:emote:&gt;</code><br />Please note that you have to mention the emote due the bot not caching emotes for their names"
+  - name: unmute
+    description: "Unmutes a user if they are muted<br />Usage: <code>db!unmute &lt;@user&gt;</code>"
+  - name: unshorten
+    description: "Unshorten a short url<br />Usage: <code>db!unshorten &lt;short url&gt;</code>"
+  - name: urban
+    description: "Search the urban dictionary.<br />Usage: <code>db!urban &lt;search term&gt;</code>"
+  - name: userinfo
+    description: "Get information from yourself or from another user.<br />Usage: <code>db!userinfo [username]</code>"
+  - name: vcautorole
+    description: "Gives a role to a user when they join a specified voice channel<br />Usage: <code>db!vcautorole add &lt;voice channel&gt; &lt;role&gt;</code><br /><code>db!vcautorole remove &lt;voice channel&gt;</code><br /><code>db!vcautorole off</code><br /><code>db!vcautorole list</code>"
+  - name: voicekick
+    description: "Kicks a user from the voice channel<br />Usage: <code>db!voicekick &lt;@user/voice channel&gt;</code>"
+  - name: volume
+    description: "Sets the new volume on the player.<br />Usage: <code>db!volume [new volume]</code>"
+  - name: warn
+    description: "Warns a member.<br />When a member has 3 warnings he/she will be kicked<br />Usage: <code>db!warn &lt;@user&gt; [reason]</code>"
+  - name: yesno
+    description: "Chooses between yes or no<br />Usage: <code>db!yesno</code>"
+  - name: yoda
+    description: "Convert your sentences into yoda speak.<br />Usage: <code>db!yoda &lt;A sentence.&gt;</code>"
 ---
 
 {{ content }}
