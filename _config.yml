@@ -14,9 +14,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: DuncteBot
-guild_invite: https://bot.duncte123.me/api/joinGuild
-bot_invite: https://bot.duncte123.me/invite
-dashboard_domain: https://dashboard.bot.duncte123.me/dashboard
+guild_invite: https://dashboard.dunctebot.com/api/joinGuild
+bot_invite: https://dashboard.dunctebot.com/invite
+dashboard_domain: https://dashboard.dunctebot.com/dashboard
 email: contact@duncte123.me
 color: "#0751c6"
 description: >- # this means to ignore newlines until "baseurl:"
