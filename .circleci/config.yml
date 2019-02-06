@@ -48,10 +48,10 @@ jobs:
                   name: HTMLProofer tests
                   command: |
                       bundle exec htmlproof ./_site \
-                      --allow-hash-href \
-                      --check-favicon  \
-                      --check-html \
-                      --disable-external
+                      --allow_hash_href \
+                      --check_favicon  \
+                      --check_html \
+                      --disable_external
 
 
             - persist_to_workspace:
