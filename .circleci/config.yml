@@ -46,8 +46,7 @@ jobs:
             # run tests!
             - run:
                   name: HTMLProofer tests
-                  command: |
-                      bundle exec htmlproof --assume-extension ./_site
+                  command: bundle exec htmlproofer --assume-extension ./_site
 
 
             - persist_to_workspace:
