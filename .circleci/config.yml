@@ -7,7 +7,10 @@ jobs:
     build:
         docker:
             # specify the version you desire here
-            - image: circleci/ruby:2.4.1-node-browsers
+            - image: circleci/ruby-node:2-8
+
+        environment:
+            BUNDLE_PATH: ~/repo/vendor/bundle
 
             # Specify service dependencies here if necessary
             # CircleCI maintains a library of pre-built images
@@ -27,9 +30,8 @@ jobs:
                       - v1-dependencies-
 
             - run:
-                  name: install dependencies
-                  command: |
-                      bundle install --jobs=4 --retry=3 --path vendor/bundle
+                  name: Bundle Install
+                  command: bundle check || bundle install --path vendor/bundle
 
             - save_cache:
                   paths:
@@ -45,7 +47,7 @@ jobs:
             - run:
                   name: HTMLProofer tests
                   command: |
-                      bundle exec htmlproofer ./_site \
+                      bundle exec htmlproof ./_site \
                       --allow-hash-href \
                       --check-favicon  \
                       --check-html \
