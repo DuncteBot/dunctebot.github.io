@@ -30,6 +30,10 @@ jobs:
                       # fallback to using the latest cache if no exact match is found
                       - v1-dependencies-
 
+            -run:
+                name: Update bundle
+                command: gem install bundler:2.0.1
+
             - run:
                   name: Bundle Install
                   command: bundle check || bundle install --path vendor/bundle
