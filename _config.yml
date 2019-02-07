@@ -28,6 +28,7 @@ github_username:  DuncteBot
 
 # Stuff that we need for the api
 api_prefix: https://dashboard.dunctebot.com/api
+#api_prefix: http://localhost:2000/api
 chapta_sitekey: 6LfjTkcUAAAAAEmamxPpg5GrcS0n5Mb9_OQp96Sz
 
 # Build settings
