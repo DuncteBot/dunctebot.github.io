@@ -1,6 +1,19 @@
 ---
 layout: default
 title: List of available flags
+
+# This is the list of flags that we loop over
+# The list is YAML style
+flags:
+    - file: Agender_pride_flag.svg.png
+      alt: Agender pride flag
+      cmd: agender
+    - file: Aromantic_Flag.svg.png
+      alt: Aromantic pride flag
+      cmd: aromantic
+    - file: asexual_flag.png
+      alt: Asexual pride flag
+      cmd: asexual
 ---
 
 <div class="row flow-text">
@@ -16,38 +29,16 @@ title: List of available flags
 </div>
 
 <div class="row">
-
+    {% for flag in page.flags %}
     <div class="col s12 m3">
         <div class="card small">
             <div class="card-image">
-                <img src="/img/flags/Agender_pride_flag.svg.png" alt="Agender pride flag"/>
+                <img src="/img/flags/{{ flag.file }}" alt="{{ flag.alt }}"/>
             </div>
             <div class="card-content">
-                <p>Command: <br /><code>db!flag agender [@user]</code></p>
+                <p>Command: <br /><code>db!flag {{ flag.cmd }} [@user]</code></p>
             </div>
         </div>
     </div>
-
-    <div class="col s12 m3">
-        <div class="card small">
-            <div class="card-image">
-                <img src="/img/flags/Aromantic_Flag.svg.png" alt="Aromantic pride flag"/>
-            </div>
-            <div class="card-content">
-                <p>Command: <br /><code>db!flag aromantic [@user]</code></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col s12 m3">
-        <div class="card small">
-            <div class="card-image">
-                <img src="/img/flags/asexual_flag.png" alt="Asexual pride flag"/>
-            </div>
-            <div class="card-content">
-                <p>Command: <br /><code>db!flag asexual [@user]</code></p>
-            </div>
-        </div>
-    </div>
-
+    {% endfor %}
 </div>
