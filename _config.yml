@@ -16,7 +16,7 @@
 title: DuncteBot
 guild_invite: https://dashboard.dunctebot.com/api/joinGuild
 bot_invite: https://dashboard.dunctebot.com/invite
-dashboard_domain: https://dashboard.dunctebot.com/dashboard
+dashboard_domain: https://dashboard.dunctebot.com/
 email: contact@duncte123.me
 color: "#0751c6"
 description: >- # this means to ignore newlines until "baseurl:"
