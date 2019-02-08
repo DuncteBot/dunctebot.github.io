@@ -25,7 +25,7 @@ function submitForm(token) {
     _("btn").classList.add("disabled");
     _("msg").innerHTML = "Checking ids.....";
 
-    fetch("/api/checkUserAndGuild", {
+    fetch(`${apiPrefix}/checkUserAndGuild`, {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"

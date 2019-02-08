@@ -59,7 +59,7 @@ function initEitor() {
 }
 
 function loadCommands() {
-    fetch(`/api/customcommands/${guildId}`, {
+    fetch(`${apiPrefix}/customcommands/${guildId}`, {
         credentials: "same-origin"
     })
         .then((response) => response.json())
@@ -125,7 +125,7 @@ function deleteCommand(name) {
 
     toast(`Deleting "${name}"!`);
 
-    fetch(`/api/customcommands/${guildId}`, {
+    fetch(`${apiPrefix}/customcommands/${guildId}`, {
         method: "DELETE",
         credentials: "same-origin",
         headers: {
@@ -167,7 +167,7 @@ function saveEdit(name) {
     command.message = editor.getValue();
     command.autoresponse = _("autoresponse").checked;
 
-    fetch(`/api/customcommands/${guildId}`, {
+    fetch(`${apiPrefix}/customcommands/${guildId}`, {
         method: "PATCH",
         credentials: "same-origin",
         headers: {
@@ -247,7 +247,7 @@ function createNew() {
 
     toast("Adding command....");
 
-    fetch(`/api/customcommands/${guildId}`, {
+    fetch(`${apiPrefix}/customcommands/${guildId}`, {
         method: "POST",
         credentials: "same-origin",
         headers: {
