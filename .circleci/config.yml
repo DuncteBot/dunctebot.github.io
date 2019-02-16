@@ -31,8 +31,8 @@ jobs:
                       - v1-dependencies-
 
             - run:
-                name: Update bundle
-                command: gem install bundler:2.0.1
+                  name: Update bundle
+                  command: gem install bundler:2.0.1
 
             - run:
                   name: Bundle Install
@@ -66,8 +66,28 @@ jobs:
                   paths:
                       - _site
 
+    deploy:
+        docker:
+            - image: circleci/node:latest
+
+        steps:
+            - checkout
+            - run: yarn install
+
+            - attach_workspace:
+                  at: ./
+
+            - run: node .circleci/deploy.js
+
 workflows:
     version: 2
     build_and_test:
         jobs:
             - build
+            - deploy:
+                  requires:
+                      - build
+                  filters:
+                      branches:
+                          only:
+                              - master

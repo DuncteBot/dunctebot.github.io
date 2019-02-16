@@ -42,11 +42,14 @@ chapta_sitekey: 6LfjTkcUAAAAAEmamxPpg5GrcS0n5Mb9_OQp96Sz
 # to override the default setting.
 exclude:
     - Gemfile
+    - CNAME
+    - LICENSE
+    - README.md
     - Gemfile.lock
     - node_modules
     - vendor/bundle/
     - vendor/cache/
     - vendor/gems/
     - vendor/ruby/
-    - ".circleci/"
-    - ".idea/"
+    - .circleci/
+    - .idea/

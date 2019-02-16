@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "ftp-deploy": "^2.3.1"
+  }
+}
