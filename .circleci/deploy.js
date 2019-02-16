@@ -27,22 +27,17 @@
  */
 
 const ftpDeploy = new (require('ftp-deploy'))();
-const fs = require('fs');
 
 const config = {
     user: process.env.FTPUSERNAME,
     password: process.env.FTPPASS,
     host: process.env.FTPHOST,
     port: 21,
-    localRoot: `${__dirname}/../`,
+    localRoot: `${__dirname}/../_site/`,
     remoteRoot: '/beta.duncte123.me/',
     include: ['*', '.*'],
     debug: true,
 };
-
-fs.readdirSync(config.localRoot).forEach(file => {
-    console.log(file);
-});
 
 ftpDeploy.on('uploading', (data) => console.log(data));
 ftpDeploy.on('uploaded', (data) => console.log(data));
@@ -53,11 +48,11 @@ ftpDeploy.on('upload-error', (data) => {
     process.exit(2);
 });
 
-// ftpDeploy.deploy(config, (err) => {
-//     if (err) {
-//         console.log(err);
-//         process.exit(1);
-//     } else {
-//         console.log('finished');
-//     }
-// });
+ftpDeploy.deploy(config, (err) => {
+    if (err) {
+        console.log(err);
+        process.exit(1);
+    } else {
+        console.log('finished');
+    }
+});
