@@ -62,13 +62,16 @@ jobs:
 
 
             - persist_to_workspace:
-                  root: ~/project/
+                  root: ./
                   paths:
                       - _site
 
     deploy:
         docker:
             - image: circleci/node:latest
+
+      environment:
+          PROJECT_ROOT: ./
 
         steps:
             - checkout
