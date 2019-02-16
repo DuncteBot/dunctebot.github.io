@@ -27,6 +27,7 @@
  */
 
 const ftpDeploy = new (require('ftp-deploy'))();
+const fs = require('fs');
 
 const config = {
     user: process.env.FTPUSERNAME,
@@ -39,6 +40,10 @@ const config = {
     debug: true,
 };
 
+fs.readdirSync(config.localRoot).forEach(file => {
+    console.log(file);
+});
+
 ftpDeploy.on('uploading', (data) => console.log(data));
 ftpDeploy.on('uploaded', (data) => console.log(data));
 ftpDeploy.on('log', (data) => console.log(data));
@@ -48,11 +53,11 @@ ftpDeploy.on('upload-error', (data) => {
     process.exit(2);
 });
 
-ftpDeploy.deploy(config, (err) => {
-    if (err) {
-        console.log(err);
-        process.exit(1);
-    } else {
-        console.log('finished');
-    }
-});
+// ftpDeploy.deploy(config, (err) => {
+//     if (err) {
+//         console.log(err);
+//         process.exit(1);
+//     } else {
+//         console.log('finished');
+//     }
+// });
