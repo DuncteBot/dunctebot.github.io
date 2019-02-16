@@ -91,4 +91,3 @@ workflows:
                       branches:
                           only:
                               - master
-                              - ftp-deploy

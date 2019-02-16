@@ -34,7 +34,7 @@ const config = {
     host: process.env.FTPHOST,
     port: 21,
     localRoot: `${__dirname}/../_site/`,
-    remoteRoot: '/beta.duncte123.me/',
+    remoteRoot: '/dunctebot.com/',
     include: ['*', '.*'],
     debug: true,
 };
