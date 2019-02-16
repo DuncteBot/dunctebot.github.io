@@ -29,14 +29,24 @@
 const ftpDeploy = new (require('ftp-deploy'))();
 
 const config = {
-    username: process.env.FTPUSERNAME ,
+    user: process.env.FTPUSERNAME,
     password: process.env.FTPPASS,
     host: process.env.FTPHOST,
     port: 21,
     localRoot: `${__dirname}/../_site/`,
     remoteRoot: '/beta.duncte123.me/',
-    include: ['*']
+    include: ['*', '.*'],
+    debug: true,
 };
+
+ftpDeploy.on('uploading', (data) => console.log(data));
+ftpDeploy.on('uploaded', (data) => console.log(data));
+ftpDeploy.on('log', (data) => console.log(data));
+ftpDeploy.on('upload-error', (data) => {
+    console.log(data);
+
+    process.exit(2);
+});
 
 ftpDeploy.deploy(config, (err) => {
     if (err) {
