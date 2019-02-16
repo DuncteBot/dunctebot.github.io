@@ -73,6 +73,10 @@ jobs:
         steps:
             - checkout
             - run: yarn install
+
+            - attach_workspace:
+                  at: ./
+
             - run: node .circleci/deploy.js
 
 workflows:
