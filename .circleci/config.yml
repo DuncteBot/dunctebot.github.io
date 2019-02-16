@@ -70,8 +70,8 @@ jobs:
         docker:
             - image: circleci/node:latest
 
-      environment:
-          PROJECT_ROOT: ./
+        environment:
+            PROJECT_ROOT: ./
 
         steps:
             - checkout
