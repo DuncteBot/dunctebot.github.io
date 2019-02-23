@@ -30,7 +30,6 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: #2C2F33;
     color: #FFFFFF;
 }
 
@@ -92,6 +91,21 @@ button, input, optgroup, select, textarea {
     color: #ffffff;
 }
 
-pre {
-    word-wrap: break-word;
+code {
+    background: #23272A;
+}
+
+pre.code-block {
+    background: #2f3136;
+    border-color: rgba(32,34,37,.3);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    white-space: pre-wrap;
+    padding: .5em;
+}
+
+pre.code-block code {
+    background: #2f3136;
+    color: #839496;
 }
