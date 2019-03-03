@@ -45,6 +45,8 @@ exclude:
     - CNAME
     - LICENSE
     - README.md
+    - package.json
+    - yarn.lock
     - Gemfile.lock
     - node_modules
     - vendor/bundle/
