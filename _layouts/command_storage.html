@@ -17,6 +17,8 @@ commands:
     description: "Here is a birb"
   - name: blackandwhite
     description: "Overlays a b&amp;w filter to the provided image.<br />Usage: <code>db!blackandwhite [image url]</code>"
+  - name: blacklist
+    description: "Control the blacklisted words on your server<br />Note: <strong>People that have the kick members permission will bypass the blacklist</strong><br /><br />Usage:<pre class=\"code-block\"><code><br />   db!blacklist list =&gt; Gives you a list of the current blacklisted words<br />   db!blacklist clear =&gt; Clears the blacklist<br />   db!blacklist add &lt;word&gt; =&gt; Adds a word to the blacklist<br />   db!blacklist remove &lt;word&gt; =&gt; Removes a word from the blacklist<br /></code></pre>"
   - name: blur
     description: "Overlays a blur filter to the provided image.<br />Usage: <code>db!blur [image url]</code>"
   - name: botinfo
@@ -188,7 +190,7 @@ commands:
   - name: setpronouns
     description: "Set your pronouns to people can check them with <code>db!pronounscheck</code><br />Usage: <code>db!setpronouns &lt;pronouns&gt; [--plural]</code><br />Examples of pronouns are:<br /><pre class=\"code-block\"><code>they/them/their/theirs<br />she/her/her/hers<br />he/him/his/his<br />ze/zir/zir/zirs<br />xe/xir/xir/xirs</code></pre><br />Use the <code>--plural</code> flag to mark your pronouns as plural (is vs are)"
   - name: setratelimits
-    description: "Sets our cooldown in minutes for un-muting your spammer of choice.<br />Usage: <code>db!setratelimits &lt;1|2|3|4|5|6&gt;</code><br />Example: db!setratelimits20|45|60|120|240|2400"
+    description: "Sets our cooldown in minutes for un-muting your spammer of choice.<br />Usage: <code>db!setratelimits &lt;1|2|3|4|5|6&gt;</code><br />Example: db!setratelimits 20|45|60|120|240|2400"
   - name: settings
     description: "Shows the current settings<br />Usage: <code>db!settings</code><br />Aliases: db!options"
   - name: setwelcomechannel
