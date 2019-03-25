@@ -13,7 +13,7 @@ prefix: db!
 
     <tbody>
     {% for command in layout.commands %}
-        <tr>
+        <tr id="{{ command.name }}">
             <td>{{ page.prefix }}{{ command.name }}</td>
             <td>{{ command.description }}</td>
         </tr>
