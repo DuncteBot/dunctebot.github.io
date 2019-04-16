@@ -59,11 +59,11 @@
         </nav>
     </div>
 
-    <ul class="sidenav" id="mobile-demo">
-        <li{% if page.title == "Home" %} class="active"{% endif %}><a href="/">Home</a></li>
-        <li{% if page.title == "List of commands" %} class="active"{% endif %}><a href="/commands">Commands</a></li>
-        <li{% if page.title == "Leave a suggestion" %} class="active"{% endif %}><a href="/suggest">Suggest</a></li>
-        <li><a href="{{ site.dashboard_domain }}">Dashboard</a></li>
+    <ul class="sidenav discord dark-not-black" id="mobile-demo">
+        <li{% if page.title == "Home" %} class="active"{% endif %}><a class="discord-text text-full-white" href="/">Home</a></li>
+        <li{% if page.title == "List of commands" %} class="active"{% endif %}><a class="discord-text text-full-white" href="/commands">Commands</a></li>
+        <li{% if page.title == "Leave a suggestion" %} class="active"{% endif %}><a class="discord-text text-full-white" href="/suggest">Suggest</a></li>
+        <li><a class="discord-text text-full-white" href="{{ site.dashboard_domain }}">Dashboard</a></li>
     </ul>
 </header>
 
