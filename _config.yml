@@ -34,8 +34,8 @@ chapta_sitekey: 6LfjTkcUAAAAAEmamxPpg5GrcS0n5Mb9_OQp96Sz
 # Build settings
 #markdown: kramdown
 #theme: minima
-#plugins:
-#  - jekyll-feed
+plugins:
+  - jekyll-redirect-from
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
