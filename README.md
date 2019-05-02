@@ -6,6 +6,7 @@ Follow the jekyll installation instructions :) [https://jekyllrb.com/docs/instal
 
 Basically:
  - Install ruby
+ - Install bundler with `gem install bundler`
  - Run `bundle install`
 
 Run with `bundle exec jekyll serve`
