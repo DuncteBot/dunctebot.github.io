@@ -30,3 +30,6 @@ gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
 # Check if the html is valid
 gem "html-proofer", "~> 3.10.2"
+
+# Redirect plugin
+gem 'jekyll-redirect-from'
