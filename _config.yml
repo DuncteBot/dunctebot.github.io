@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: DuncteBot
 guild_invite: https://dashboard.dunctebot.com/api/joinGuild
-bot_invite: https://dashboard.dunctebot.com/invite
+bot_invite: https://discordapp.com/oauth2/authorize?client_id=210363111729790977&scope=bot&permissions=-1?redirect_uri=https://dunctebot.com/commands
 dashboard_domain: https://dashboard.dunctebot.com/
 email: contact@duncte123.me
 color: "#0751c6"
