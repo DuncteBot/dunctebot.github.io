@@ -110,3 +110,7 @@ pre.code-block code {
     background: #2f3136;
     color: #839496;
 }
+
+.oh {
+    overflow: hidden;
+}

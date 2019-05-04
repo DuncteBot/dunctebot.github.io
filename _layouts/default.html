@@ -4,6 +4,7 @@
     {%- assign timestamp = site.time | date: '%s' -%}
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!--    <meta name="viewport" content="width=device-width"/>-->
     <meta charset="UTF-8"/>
 
     <meta name="author" content="duncte123"/>
@@ -46,15 +47,17 @@
 
     <div class="navbar-fixed">
         <nav class="indigo">
-            <div class="nav-wrapper container">
-                <a href="/" class="brand-logo">DuncteBot</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li{% if page.title == "Home" %} class="active"{% endif %}><a href="/">Home</a></li>
-                    <li{% if page.title == "List of commands" %} class="active"{% endif %}><a href="/commands">Commands</a></li>
-                    <li{% if page.title == "Leave a suggestion" %} class="active"{% endif %}><a href="/suggest">Suggest</a></li>
-                    <li><a href="{{ site.dashboard_domain }}">Dashboard</a></li>
-                </ul>
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo">DuncteBot</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li{% if page.title == "Home" %} class="active"{% endif %}><a href="/">Home</a></li>
+                        <li{% if page.title == "List of commands" %} class="active"{% endif %}><a href="/commands">Commands</a></li>
+                        <li{% if page.title == "Leave a suggestion" %} class="active"{% endif %}><a href="/suggest">Suggest</a></li>
+                        <li><a href="{{ site.dashboard_domain }}">Dashboard</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </div>
@@ -69,7 +72,7 @@
 
 <main>
     <div class="container">
-       {{- content -}}
+       {{ content }}
     </div>
 </main>
 
