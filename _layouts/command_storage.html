@@ -20,7 +20,7 @@ commands:
   - name: blackandwhite
     description: "Overlays a b&amp;w filter to the provided image.<br />Usage: <code>db!blackandwhite [image url]</code>"
   - name: blacklist
-    description: "Control the blacklisted words on your server<br />Note: <strong>People that have the kick members permission will bypass the blacklist</strong><br /><br />Usage:<pre class=\"code-block\"><code><br />   db!blacklist list =&gt; Gives you a list of the current blacklisted words<br />   db!blacklist clear =&gt; Clears the blacklist<br />   db!blacklist add &lt;word&gt; =&gt; Adds a word to the blacklist<br />   db!blacklist remove &lt;word&gt; =&gt; Removes a word from the blacklist<br /></code></pre>"
+    description: "Control the blacklisted words on your server<br />Note: <strong>People that have the kick members permission will bypass the blacklist</strong><br /><br />Usage:<pre class=\"code-block\"><code>db!blacklist list =&gt; Gives you a list of the current blacklisted words<br />db!blacklist clear =&gt; Clears the blacklist<br />db!blacklist add &lt;word&gt; =&gt; Adds a word to the blacklist<br />db!blacklist remove &lt;word&gt; =&gt; Removes a word from the blacklist</code></pre>"
   - name: blur
     description: "Overlays a blur filter to the provided image.<br />Usage: <code>db!blur [image url]</code>"
   - name: botinfo
@@ -32,7 +32,7 @@ commands:
   - name: chat
     description: "Have a chat with dunctebot<br />Usage: <code>db!chat &lt;message&gt;</code>"
   - name: cleanup
-    description: "Performs a cleanup in the channel where the command is run.<br />To clear an entire channel it's better to use <code>db!purgechannel</code><br />Usage: <code>db!cleanup[ammount] [keep-pinned] [bots-only]</code>"
+    description: "Performs a cleanup in the channel where the command is run.<br />To clear an entire channel it's better to use <code>db!purgechannel</code><br />Usage: <code>db!cleanup [ammount] [keep-pinned] [bots-only]</code>"
   - name: clearleftguilds
     description: "Clears the guilds that we have left from the cache and/or database<br />Usage: <code>db!clearleftguilds [--clear-db]</code>"
   - name: clint
@@ -42,7 +42,7 @@ commands:
   - name: colour
     description: "Shows a random colour."
   - name: cookie
-    description: "<code>db!cookie</code> =&gt; blobnomcookie.<br /><code>db!trigger</code> =&gt; Use when you are triggered.<br /><code>db!spam</code> =&gt; What do you think 😏<br /><code>db!wam</code> =&gt; You need more WAM!.<br /><code>db!mineh</code> =&gt; HERE COMES MINEH!<br /><code>db!invite</code> =&gt; Gives you the bot invite<br /><code>db!uptime</code> =&gt; Shows the bot uptime<br /><code>db!quote</code> =&gt; Shows an inspiring quote<br /><code>db!xkcd</code> =&gt; Get a random comic from xkcd.com<br />Aliases: db!trigger, db!spam, db!wam, db!mineh, db!invite, db!uptime, db!quote, db!xkcd, db!screenfetch"
+    description: "<code>db!cookie</code> =&gt; blobnomcookie.<br /><code>db!trigger</code> =&gt; Use when you are triggered.<br /><code>db!spam</code> =&gt; What do you think 😏<br /><code>db!wam</code> =&gt; You need more WAM!.<br /><code>db!mineh</code> =&gt; HERE COMES MINEH!<br /><code>db!invite</code> =&gt; Gives you the bot invite<br /><code>db!uptime</code> =&gt; Shows the bot uptime<br /><code>db!quote</code> =&gt; Shows an inspiring quote<br />Aliases: db!trigger, db!spam, db!wam, db!mineh, db!invite, db!uptime, db!quote, db!xkcd, db!screenfetch"
   - name: csshumor
     description: "Gives you a funny css joke"
   - name: customcommand
@@ -161,6 +161,10 @@ commands:
     description: "Start the current track back to the beginning"
   - name: reverse
     description: "reverses a string<br />Usage: <code>db!reverse &lt;text&gt;</code>"
+  - name: roleinfo
+    description: "Displays info about a specified role or the highest role that you have<br />Usage <code>db!roleinfo [role]</code>"
+  - name: roles
+    description: "Returns a list of roles in the server"
   - name: salty
     description: "Someones being salty today<br />Usage: <code>db!salty [@user/url]</code>"
   - name: saturate
@@ -175,8 +179,10 @@ commands:
     description: "Make the bot play song.<br />Usage: <code>db!search [search term]</code>"
   - name: seek
     description: "seek in the currently playing track<br />Usage: <code>db!seek &lt;minutes:seconds&gt;</code><br />Examples: <code>db!seek 04:20</code><br /><code>db!seek 00:50</code><br />"
+  - name: serverjoins
+    description: "Shows a graph with the joins for this server.<br />This is not a full history as it only looks at the members that are currently in the server."
   - name: setcolor
-    description: "Sets the colors of the embeds from the bot.<br />Usage: <code>db!setcolor &lt;hex color&gt;</code>"
+    description: "Sets the colors of the embeds from the bot.<br />Usage: <code>db!setcolor &lt;hex color&gt;</code><br />Aliases: db!setembedcolor"
   - name: setdescription
     description: "Set a custom description in db!guildinfo<br />Usage: <code>db!setdescription &lt;description&gt;</code>"
   - name: setjoinmessage
