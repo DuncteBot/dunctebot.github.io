@@ -43,6 +43,11 @@ jobs:
                       - ./vendor/bundle
                   key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
+
+            - run:
+                name: Save commands
+                command: cd _layouts && wget https://dashboard.dunctebot.com/api/command_storage.html -O command_storage.html
+
             # Build
             - run:
                   name: Build
