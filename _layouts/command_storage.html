@@ -1,6 +1,8 @@
 ---
 layout: default
 commands:
+  - name: 8ball
+    description: "Ask a question to the 8ball<br />Usage: <code>db!8ball &lt;question&gt;</code>"
   - name: achievement
     description: "You got an achievement!<br />Usage: <code>db!achievement &lt;text&gt;</code>"
   - name: alpaca
@@ -223,10 +225,12 @@ commands:
     description: "Stops the music player."
   - name: suggest
     description: "Suggest something to be in Dunctebot!"
+  - name: tag
+    description: "Store it in a tag<br />Usage: <code>db!tag &lt;tag-name/raw/author/delete/create/help&gt; [tag-name] [tag content]</code><br />The tags follow the same parsing as custom commands and the join/leave messages"
   - name: tempban
-    description: "Temporally bans a user from the guild <strong>(THIS WILL DELETE MESSAGES)</strong><br />Usage: <code>db!tempban &lt;@user&gt; &lt;time&gt;&lt;m/h/d/w/M/Y&gt; [Reason]</code>"
+    description: "Temporally bans a user from the guild <strong>(THIS WILL DELETE MESSAGES)</strong><br />Usage: <code>db!tempban &lt;@user&gt; &lt;time&gt;&lt;w/d/h/m/s&gt; [Reason]</code>"
   - name: tempmute
-    description: "Temporally mutes a user on the guild<br />Usage: <code>db!tempmute &lt;@user&gt; &lt;time&gt;&lt;m/h/d/w/M/Y&gt; [Reason]</code>"
+    description: "Temporally mutes a user on the guild<br />Usage: <code>db!tempmute &lt;@user&gt; &lt;time&gt;&lt;w/d/h/m/s&gt; [Reason]</code>"
   - name: testtag
     description: "Test your jagtag format before you save it as custom command etc.<br />Usage: <code>db!testtag &lt;JagTag syntax&gt;</code>"
   - name: thesearch
@@ -271,6 +275,8 @@ commands:
     description: "Sets the new volume on the player.<br />Usage: <code>db!volume [new volume]</code>"
   - name: warn
     description: "Warns a member.<br />When a member has 3 warnings he/she will be kicked<br />Usage: <code>db!warn &lt;@user&gt; [reason]</code>"
+  - name: xkcd
+    description: "Sends the latest xkcd comic<br />Usage: <code>db!xkcd [latest/random/number]</code>"
   - name: yesno
     description: "Chooses between yes or no<br />Usage: <code>db!yesno</code>"
   - name: yoda
