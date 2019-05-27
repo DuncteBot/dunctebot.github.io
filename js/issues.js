@@ -38,7 +38,6 @@ function addCommand() {
         <span class="helper-text" data-error="Invalid command" data-success=""></span>
     </div>`;
 
-
     _("commandsContainer").appendChild(item);
 }
 
