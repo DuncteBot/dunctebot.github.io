@@ -35,8 +35,6 @@ commands:
     description: "Have a chat with dunctebot<br />Usage: <code>db!chat &lt;message&gt;</code>"
   - name: cleanup
     description: "Performs a cleanup in the channel where the command is run.<br />To clear an entire channel it's better to use <code>db!purgechannel</code><br />Usage: <code>db!cleanup [ammount] [keep-pinned] [bots-only]</code>"
-  - name: clearleftguilds
-    description: "Clears the guilds that we have left from the cache and/or database<br />Usage: <code>db!clearleftguilds [--clear-db]</code>"
   - name: clint
     description: "Shows a picture of Clint staring at something on a monitor.<br />Usage: <code>db!clint [image url]</code>"
   - name: coin
@@ -58,7 +56,7 @@ commands:
   - name: delete
     description: "Creates a Delete button.<br />Usage: <code>db!delete &lt;text&gt;</code>"
   - name: dialog
-    description: "Gives you a nice dialog<br />Usage: <code>db!dialog &lt;text&gt;</code>"
+    description: "Gives you a nice dialog<br />Usage: <code>db!}dialog &lt;text&gt;</code>"
   - name: didyoumean
     description: "Did you type your search wrong?<br />Usage: <code>db!didyoumean &lt;Top text&gt;|&lt;Bottom text&gt;</code>"
   - name: discordmeme
@@ -154,7 +152,7 @@ commands:
   - name: purgechannel
     description: "Purges a text channel.<br />Usage: <code>db!purgechannel &lt;#text-channel&gt;</code>"
   - name: radio
-    description: "Adds a radio http stream to your queue and goes to it!<br /><strong>YOU HAVE TO UPVOTE!</strong><br />Yes it skips all songs until it finds the stream it may bug if the current stream has the same url.<br />Usage: <code>db!radio &lt;(full)list/station name&gt;</code>"
+    description: "Adds a radio http stream to your queue and goes to it!<br />Yes it skips all songs until it finds the stream it may bug if the current stream has the same url.<br />Usage: <code>db!radio &lt;(full)list/station name&gt;</code>"
   - name: readd
     description: "Readd the current track to the end of the queue"
   - name: repeat
@@ -178,7 +176,7 @@ commands:
   - name: seal
     description: "Here is a nice seal"
   - name: search
-    description: "Make the bot play song.<br />Usage: <code>db!search [search term]</code>"
+    description: "Search for a song to play<br />Usage: <code>db!search &lt;search term&gt;</code>"
   - name: seek
     description: "seek in the currently playing track<br />Usage: <code>db!seek &lt;minutes:seconds&gt;</code><br />Examples: <code>db!seek 04:20</code><br /><code>db!seek 00:50</code><br />"
   - name: serverjoins
@@ -214,11 +212,11 @@ commands:
   - name: shuffle
     description: "Shuffles the current queue"
   - name: skip
-    description: "Skips the current track."
+    description: "Skips the current track.<br />Usage: <code>db!skip [skip amount]</code>"
   - name: slowmode
     description: "Enable slowmode on in the current channel.<br />Usage: <code>db!slowmode &lt;seconds (1-120)&gt;</code><br />Use <code>db!slowmode off</code> to turn slowmode off"
   - name: softban
-    description: "Kicks a user from the guild <strong>(THIS WILL DELETE MESSAGES)</strong>"
+    description: "Kicks a user from the guild <strong>(THIS WILL DELETE MESSAGES)</strong><br />Usage: <code>db!softban &lt;@user&gt; [reason]</code>"
   - name: stats
     description: "Shows some nerdy stats about the bot"
   - name: stop
@@ -254,7 +252,7 @@ commands:
   - name: translate
     description: "Translate a text from English to another language<br />Usage: <code>db!translate &lt;destination language&gt; &lt;text&gt;</code>"
   - name: ttb
-    description: "Convert your text to bricks"
+    description: "Convert your text to bricks<br />Usage: <code>db!ttb &lt;text&gt;</code>"
   - name: unban
     description: "Unbans a user<br />Usage: <code>db!unban &lt;user&gt;</code>"
   - name: unlockemote
@@ -263,6 +261,8 @@ commands:
     description: "Unmutes a user if they are muted<br />Usage: <code>db!unmute &lt;@user&gt;</code>"
   - name: unshorten
     description: "Unshorten a short url<br />Usage: <code>db!unshorten &lt;short url&gt;</code>"
+  - name: unwarn
+    description: "Removes the latest warning of a user<br />Usage: <code>db!unwarn &lt;@user&gt;</code>"
   - name: urban
     description: "Search the urban dictionary.<br />Usage: <code>db!urban &lt;search term&gt;</code>"
   - name: userinfo
