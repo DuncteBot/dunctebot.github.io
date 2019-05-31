@@ -48,6 +48,10 @@ jobs:
                 name: Save commands
                 command: cd _layouts && wget https://dashboard.dunctebot.com/api/command_storage.html -O command_storage.html
 
+            - run:
+                name: Save commands json
+                command: wget https://dashboard.dunctebot.com/api/commands.json -O commands.json
+
             # Build
             - run:
                   name: Build

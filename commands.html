@@ -3,8 +3,7 @@ layout: command_storage
 title: List of commands
 prefix: db!
 ---
-
-<table class="striped">
+<table class="striped" id="static-list">
     <thead>
     <tr>
         <th>Command</th>
@@ -14,10 +13,51 @@ prefix: db!
 
     <tbody>
     {% for command in layout.commands %}
-        <tr id="{{ command.name }}">
-            <td>{{ page.prefix }}{{ command.name }}</td>
-            <td>{{ command.description }}</td>
-        </tr>
+    <tr id="{{ command.name }}">
+        <td>{{ page.prefix }}{{ command.name }}</td>
+        <td>{{ command.description }}</td>
+    </tr>
     {% endfor %}
     </tbody>
 </table>
+
+<div id="commandList">
+    <table class="striped">
+        <thead>
+        <tr>
+            <th>Command</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% raw %}
+        <tr v-for="(command, i) in commands" :id="command.name">
+            <td>{{ prefix }}{{ command.name }}</td>
+            <td v-html="command.help"></td>
+        </tr>
+        {% endraw %}
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    const commands = {% include commands.json %};
+
+    //commands.find(x => x.name === name || x.aliases.includes(name))
+
+    window.onload = () => {
+        new Vue({
+            el: '#commandList',
+            data: {
+                commands: commands,
+                prefix: '{{ page.prefix }}'
+            },
+            mounted() {
+                const el = document.getElementById('static-list');
+                el.parentNode.removeChild(el);
+            }
+        });
+    };
+</script>
