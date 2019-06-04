@@ -35,7 +35,7 @@ prefix: db!
 </div>
 
 
-<div id="commandList">
+<div id="vueApp">
     <div class="row"></div>
     <div class="row">
         <div class="col s12 m3 push-m9">
@@ -80,7 +80,7 @@ prefix: db!
 
     window.onload = () => {
         new Vue({
-            el: '#commandList',
+            el: '#vueApp',
             data: {
                 // commands: commands,
                 search: '',
@@ -95,7 +95,7 @@ prefix: db!
                     let sorted = commandsRaw.sort((a, b) => a.name.localeCompare(b.name));
 
                     if (this.search) {
-                        const toSearch = this.search.replace('db!', '');
+                        const toSearch = this.search.replace('db!', '').toLowerCase();
 
                         sorted = sorted.filter(x => x.name.includes(toSearch) || x.aliases.includes(toSearch));
                     }

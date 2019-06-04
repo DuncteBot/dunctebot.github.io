@@ -79,6 +79,10 @@ main {
     background-color: #6f7b82;
 }
 
+table.striped > tbody > tr:nth-child(odd) {
+    background-color: #6f7b82;
+}
+
 .input-field.textarea {
     border: 1px solid #99AAB5;
 }
