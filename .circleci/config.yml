@@ -46,7 +46,9 @@ jobs:
 
             - run:
                 name: Save commands
-                command: cd _layouts && wget https://dashboard.dunctebot.com/api/command_storage.html -O command_storage.html
+                command: |
+                  cd _layouts && wget https://dashboard.dunctebot.com/api/command_storage.html -O command_storage.html
+                  && wget https://dashboard.dunctebot.com/api/command_storage.html -O command_storage_minimal.html
 
             - run:
                 name: Save commands json

@@ -1,0 +1,108 @@
+---
+layout: command_storage_minimal
+title: List of commands
+prefix: db!
+---
+<div id="static-list">
+    <div class="row"></div>
+    <div class="row">
+        <div class="col s12 m3 push-m9">
+            <input type="text" placeholder="Search for commands">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <table class="striped">
+                <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for command in layout.commands %}
+                <tr id="{{ command.name }}">
+                    <td>{{ page.prefix }}{{ command.name }}</td>
+                    <td>{{ command.description }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div id="vueApp">
+    <div class="row"></div>
+    <div class="row">
+        <div class="col s12 m3 push-m9">
+            <input type="text" v-model="search" placeholder="Search for commands">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <table class="striped">
+                <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% raw %}
+                <tr v-for="(command, i) in commands" :id="command.name">
+                    <td>{{ prefix }}{{ command.name }}</td>
+                    <td v-html="command.help"></td>
+                </tr>
+                <tr v-if="!commands.length">
+                    <td>
+                        <p class="center">No commands found</p>
+                    </td>
+                </tr>
+
+                {% endraw %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue" async defer></script>
+<script async>
+    const commandsRaw = {% include commands.json %};
+
+    //commands.find(x => x.name === name || x.aliases.includes(name))
+
+    window.onload = () => {
+        new Vue({
+            el: '#vueApp',
+            data: {
+                // commands: commands,
+                search: '',
+                prefix: '{{ page.prefix }}'
+            },
+            mounted() {
+                const el = document.getElementById('static-list');
+                el.parentNode.removeChild(el);
+            },
+            computed: {
+                commands () {
+                    let sorted = commandsRaw.sort((a, b) => a.name.localeCompare(b.name));
+
+                    if (this.search) {
+                        const toSearch = this.search.replace('db!', '').toLowerCase();
+
+                        sorted = sorted.filter(x => x.name.includes(toSearch) || x.aliases.includes(toSearch));
+                    }
+
+                    return sorted;
+                },
+            },
+        });
+    };
+</script>
