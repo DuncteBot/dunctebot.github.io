@@ -48,7 +48,8 @@ jobs:
                 name: Save commands
                 command: |
                   cd _layouts && wget https://dashboard.dunctebot.com/api/command_storage.html -O command_storage.html
-                  && wget https://dashboard.dunctebot.com/api/command_storage.html -O command_storage_minimal.html
+                  && \cp command_storage.html command_storage_minimal.html
+                  && sed -i 's/layout: default/layout: default_minimal/g' command_storage_minimal.html
 
             - run:
                 name: Save commands json
