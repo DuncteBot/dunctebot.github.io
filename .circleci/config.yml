@@ -90,6 +90,18 @@ jobs:
             - attach_workspace:
                   at: ./
 
+            - run:
+                  name: Save commands
+                  command: |
+                      cd _layouts
+                      wget https://dashboard.dunctebot.com/api/command_storage.html -O command_storage.html
+                      \cp command_storage.html command_storage_minimal.html
+                      sed -i 's/layout: default/layout: default_minimal/g' command_storage_minimal.html
+
+            - run:
+                  name: Save commands json
+                  command: wget https://dashboard.dunctebot.com/api/commands.json -O commands.json
+
             - run: node .circleci/deploy.js
 
 workflows:
