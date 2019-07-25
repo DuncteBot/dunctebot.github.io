@@ -54,7 +54,7 @@ prefix: db!
         if (input.value) {
             const toSearch = input.value.replace('db!', '').toLowerCase();
 
-            sorted = sorted.filter(x => x.name.includes(toSearch) || x.aliases.includes(toSearch));
+            sorted = sorted.filter(x => x.name.includes(toSearch) || x.aliases.some(a => a.includes(toSearch)));
         }
 
         display.innerHTML = buildCommandList(sorted);
