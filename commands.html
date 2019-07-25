@@ -43,47 +43,6 @@ prefix: db!
 
 <script>
     const commandsRaw = {% include commands.json %};
-
-    //commands.find(x => x.name === name || x.aliases.includes(name))
-    const input = document.getElementById('search_input');
-    const display = document.getElementById('display');
-
-    input.addEventListener('keyup', () => {
-        let sorted = commandsRaw.sort((a, b) => a.name.localeCompare(b.name));
-
-        if (input.value) {
-            const toSearch = input.value.replace('db!', '').toLowerCase();
-
-            sorted = sorted.filter(x => x.name.includes(toSearch) || x.aliases.some(a => a.includes(toSearch)));
-        }
-
-        display.innerHTML = buildCommandList(sorted);
-    });
-
-    function buildCommandList(items) {
-
-        if (!items.length) {
-            return `
-                <tr>
-                    <td colspan="2">
-                        <p class="center">No commands found</p>
-                    </td>
-                </tr>
-            `;
-        }
-
-        let output = '';
-
-        for (let command of items) {
-            output += `
-                <tr id="${command.name}">
-                    <td>{{ prefix }}${command.name}</td>
-                    <td>${command.help}</td>
-                </tr>
-            `;
-        }
-
-        return output;
-    }
-
+    const prefix = '{{ page.prefix }}';
 </script>
+<script src="/js/commandSearch.js"></script>
