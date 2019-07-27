@@ -1,6 +1,6 @@
 #!/bin/sh
 git push
-git checkout master
+git checkout php
 git pull
 git merge development
 git push
