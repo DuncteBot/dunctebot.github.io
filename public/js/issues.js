@@ -35,7 +35,7 @@ function addCommand() {
     <button class="btn red" onclick="delCMD('cmd-${id}'); return false;">X</button>
     <div class="input-field inline">
         <input name="command" type="text" placeholder="db!help drake" pattern="db![a-z0-9 ]+" class="validate" required>
-        <span class="helper-text" data-error="Invalid command" data-success=""></span>
+        <span class="helper-text" data-error="Invalid command (should start with db!)" data-success=""></span>
     </div>`;
 
     _("commandsContainer").appendChild(item);
