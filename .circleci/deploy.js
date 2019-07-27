@@ -21,7 +21,7 @@ const config = {
     password: process.env.FTPPASS,
     host: process.env.FTPHOST,
     port: 21,
-    localRoot: `${__dirname}/../_site/`,
+    localRoot: `${__dirname}/../`,
     remoteRoot: '/dunctebot.com/',
     include: ['*', '.*'],
     debug: true,
