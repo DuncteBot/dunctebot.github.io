@@ -23,6 +23,8 @@ const config = {
     port: 21,
     localRoot: `${__dirname}/../`,
     remoteRoot: '/dunctebot.com/',
+    exclude: ['node_modules'],
+    deleteRemote: false,
     include: ['*', '.*'],
     debug: true,
 };
