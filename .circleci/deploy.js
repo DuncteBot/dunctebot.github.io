@@ -29,11 +29,12 @@ const config = {
     ],
     deleteRemote: false,
     include: [
-        'app/*',
-        'public/*',
-        'resources/*',
-        'storage/*',
-        'vendor/*',
+        'app/**',
+        'public/**',
+        'public/.*',
+        'resources/**',
+        'storage/**',
+        'vendor/**',
     ],
     debug: true,
 };
