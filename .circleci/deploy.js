@@ -28,7 +28,13 @@ const config = {
         '.git/*',
     ],
     deleteRemote: false,
-    include: ['*', '.*'],
+    include: [
+        'app/*',
+        'public/*',
+        'resources/*',
+        'storage/*',
+        'vendor/*',
+    ],
     debug: true,
 };
 
