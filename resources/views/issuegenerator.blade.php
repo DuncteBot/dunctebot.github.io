@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Live Server Count')
+@section('title', 'Issue generator')
 
 @section('content')
     <link rel="stylesheet" href="/css/darcula.css">

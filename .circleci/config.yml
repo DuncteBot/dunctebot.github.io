@@ -53,12 +53,12 @@ jobs:
 
             - persist_to_workspace:
                   root: ./
-                      paths:
-                          - app
-                          - public
-                          - resources
-                          - storage
-                          - vendor
+                  paths:
+                      - app
+                      - public
+                      - resources
+                      - storage
+                      - vendor
 
     deploy:
         docker:
