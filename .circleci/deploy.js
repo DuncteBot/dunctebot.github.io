@@ -24,8 +24,10 @@ const config = {
     localRoot: `${__dirname}/../`,
     remoteRoot: '/dunctebot.com/',
     exclude: [
-        'node_modules/*',
-        '.git/*',
+        'node_modules/**',
+        '.git/**',
+        'vendor/**/test**',
+        'vendor/**/Test**',
     ],
     deleteRemote: false,
     include: [
