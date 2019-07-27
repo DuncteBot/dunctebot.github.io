@@ -6,78 +6,59 @@ version: 2
 jobs:
     build:
         docker:
-            # specify the version you desire here
-            - image: circleci/ruby:2.6.0-node
-
-        environment:
-            BUNDLE_PATH: ~/repo/vendor/bundle
-            BUNDLER_VERSION: 2.0.1
+            # Specify the version you desire here
+            - image: circleci/php:7.3.6-fpm-stretch-node-browsers
 
             # Specify service dependencies here if necessary
             # CircleCI maintains a library of pre-built images
             # documented at https://circleci.com/docs/2.0/circleci-images/
-            # - image: circleci/postgres:9.4
-
-        working_directory: ~/repo
+            # Using the RAM variation mitigates I/O contention
+            # for database intensive operations.
+            # - image: circleci/mysql:5.7-ram
+            #
+            # - image: redis:2.8.19
 
         steps:
             - checkout
 
+            - run:
+                name: install libs for extensions
+                command: sudo apt update && sudo apt install zlib1g-dev libsqlite3-dev
+
+            - run:
+                name: install php extensions
+                command: sudo docker-php-ext-install zip
+
             # Download and cache dependencies
+
+            # composer cache
             - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "Gemfile.lock" }}
-                      # fallback to using the latest cache if no exact match is found
-                      - v1-dependencies-
+                keys:
+                    # "composer.lock" can be used if it is committed to the repo
+                    - v1-dependencies-{{ checksum "composer.json" }}-{{ checksum "yarn.lock" }}
+                    # fallback to using the latest cache if no exact match is found
+                    - v1-dependencies-
 
-            - run:
-                  name: Update bundle
-                  command: gem install bundler:2.0.1
-
-            - run:
-                  name: Bundle Install
-                  command: bundle check || bundle install --path vendor/bundle
+            - run: composer install -n --prefer-dist --no-dev
 
             - save_cache:
-                  paths:
-                      - ./vendor/bundle
-                  key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-
-            - run:
-                name: Save commands
-                command: |
-                    cd _layouts
-                    wget https://dashboard.dunctebot.com/api/command_storage.html -O command_storage.html
-                    \cp command_storage.html command_storage_minimal.html
-                    sed -i 's/layout: default/layout: default_minimal/g' command_storage_minimal.html
+                key: composer-v1-{{ checksum "composer.lock" }}-{{ checksum "yarn.lock" }}
+                paths:
+                    - vendor
+                    - node_modules
 
             - run:
                 name: Save commands json
-                command: cd _includes && wget https://dashboard.dunctebot.com/api/commands.json -O commands.json
-
-            # Build
-            - run:
-                  name: Build
-                  command: bundle exec jekyll build
-
-            # run tests!
-            - run:
-                  name: HTMLProofer tests
-                  command: |
-                      bundle exec htmlproofer \
-                          --allow-hash-href \
-                          --check-favicon  \
-                          --check-html \
-                          --disable-external \
-                          --assume-extension \
-                          ./_site \
-
+                command: cd resources && wget https://dashboard.dunctebot.com/api/commands.json -O commands.json
 
             - persist_to_workspace:
                   root: ./
-                  paths:
-                      - _site
+                      paths:
+                          - app
+                          - public
+                          - resources
+                          - storage
+                          - vendor
 
     deploy:
         docker:

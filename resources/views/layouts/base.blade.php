@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {%- assign timestamp = site.time | date: '%s' -%}
     <!--Let browser know website is optimized for mobile-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
     <meta name="viewport" content="width=device-width"/>
     <meta charset="UTF-8"/>
 
     <meta name="author" content="duncte123"/>
     <meta name="application-name" content="DuncteBot"/>
     <meta name="keywords" content="discord, bot, music, youtube, google, best discord bot, spotify, rythm"/>
-    <meta name="description" content="{{ site.description }}"/>
-    <meta content="DuncteBot" property="og:site_name"/>
-    <meta content="{{ page.title }}" property="og:title"/>
-    <meta content="website" property="og:type"/>
-    <meta content="{{ site.description }}" property="og:description"/>
-    <meta name="theme-color" content="{{ site.color }}"/>
-    <meta name="msapplication-TileColor" content="{{ site.color }}"/>
+    <meta name="description" content="{{ $description }}"/>
+    <meta property="og:site_name" content="DuncteBot"/>
+    <meta property="og:title" content="@yield('title')"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="{{ $description }}"/>
+    <meta name="theme-color" content="{{ $color }}"/>
+    <meta name="msapplication-TileColor" content="{{ $color }}"/>
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@DuncteBot"/>
-    <meta name="twitter:title" content="{{ page.title }}"/>
-    <meta name="twitter:description" content="{{ site.description }}"/>
+    <meta name="twitter:title" content="@yield('title')"/>
+    <meta name="twitter:description" content="{{ $description }}"/>
     <meta name="twitter:image" content="/img/favicon.png"/>
 
-    <meta content="/img/favicon.png" property="og:image"/>
-    <link href="/public/img/favicon.png" rel="icon" type="image/png"/>
-    <link href="/public/img/favicon.png" rel="shortcut icon" type="image/png"/>
-    <link href="/public/img/favicon.png" rel="apple-touch-icon" type="image/png"/>
+    <meta property="og:image" content="/img/favicon.png"/>
+    <link href="/img/favicon.png" rel="icon" type="image/png"/>
+    <link href="/img/favicon.png" rel="shortcut icon" type="image/png"/>
+    <link href="/img/favicon.png" rel="apple-touch-icon" type="image/png"/>
 
     <style>
         * {
-            --color: {{ site.color }};
+            --color: {{ $color }};
         }
     </style>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="/public/css/materialize.custom.css?time={{ timestamp }}"/>
-    <link rel="stylesheet" href="/public/css/style.css?time={{ timestamp }}"/>
-    <link rel="stylesheet" href="/public/css/animate.css?time={{ timestamp }}"/>
+    <link rel="stylesheet" href="/css/materialize.custom.css?time={{ $timestamp }}"/>
+    <link rel="stylesheet" href="/css/style.css?time={{ $timestamp }}"/>
+    <link rel="stylesheet" href="/css/animate.css?time={{ $timestamp }}"/>
 
-    <title>{{ page.title }}</title>
+    <title>@yield('title')</title>
 </head>
 <body class="discord body">
 <header>
@@ -52,10 +51,10 @@
                     <a href="/" class="brand-logo">DuncteBot</a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li{% if page.title == "Home" %} class="active"{% endif %}><a href="/">Home</a></li>
-                        <li{% if page.title == "List of commands" %} class="active"{% endif %}><a href="/commands">Commands</a></li>
-                        <li{% if page.title == "Leave a suggestion" %} class="active"{% endif %}><a href="/suggest">Suggest</a></li>
-                        <li><a href="{{ site.dashboard_domain }}">Dashboard</a></li>
+                        <li @checkActiveClass('Home') ><a href="/">Home</a></li>
+                        <li @checkActiveClass('List of commands') ><a href="/commands">Commands</a></li>
+                        <li @checkActiveClass('Leave a suggestion') ><a href="/suggest">Suggest</a></li>
+                        <li><a href="{{ $dashboardDomain }}">Dashboard</a></li>
                     </ul>
                 </div>
             </div>
@@ -63,16 +62,16 @@
     </div>
 
     <ul class="sidenav discord dark-not-black" id="mobile-demo">
-        <li{% if page.title == "Home" %} class="active"{% endif %}><a class="discord-text text-full-white" href="/">Home</a></li>
-        <li{% if page.title == "List of commands" %} class="active"{% endif %}><a class="discord-text text-full-white" href="/commands">Commands</a></li>
-        <li{% if page.title == "Leave a suggestion" %} class="active"{% endif %}><a class="discord-text text-full-white" href="/suggest">Suggest</a></li>
-        <li><a class="discord-text text-full-white" href="{{ site.dashboard_domain }}">Dashboard</a></li>
+        <li @checkActiveClass('Home') ><a class="discord-text text-full-white" href="/">Home</a></li>
+        <li @checkActiveClass('List of commands') ><a class="discord-text text-full-white" href="/commands">Commands</a></li>
+        <li @checkActiveClass('Leave a suggestion') ><a class="discord-text text-full-white" href="/suggest">Suggest</a></li>
+        <li><a class="discord-text text-full-white" href="{{ $dashboardDomain }}">Dashboard</a></li>
     </ul>
 </header>
 
 <main>
     <div class="container">
-       {{ content }}
+        @yield('content')
     </div>
 </main>
 
@@ -82,14 +81,14 @@
             <div class="col l6 s12">
                 <h5 class="white-text">DuncteBot</h5>
                 <p class="grey-text text-lighten-4">A fast multipurpose discord bot that plays music from Spotify</p>
-                <a href="https://twitter.com/{{ site.twitter_username }}?ref_src=twsrc%5Etfw" class="twitter-follow-button"
-                   data-show-count="true">Follow @{{ site.twitter_username }}</a>
+                <a href="https://twitter.com/{{ $twitterUsername }}?ref_src=twsrc%5Etfw" class="twitter-follow-button"
+                   data-show-count="true">Follow {{ '@' . $twitterUsername }}</a>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="{{ site.bot_invite }}" target="_blank">Invite bot</a></li>
-                    <li><a class="grey-text text-lighten-3" href="{{ site.guild_invite }}" target="_blank">Join server</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{{ $botInvite }}" target="_blank">Invite bot</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{{ $guildInvite }}" target="_blank">Join server</a></li>
                     <li><a class="grey-text text-lighten-3" href="https://paypal.me/duncte123"
                            target="_blank">Donate</a></li>
                     <li><a class="grey-text text-lighten-3" href="https://patreon.com/DuncteBot"
@@ -110,9 +109,9 @@
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
-    const apiPrefix = "{{ site.api_prefix }}";
+    const apiPrefix = "{{ $apiPrefix }}";
 </script>
-<script src="/public/js/main.js?time={{ timestamp }}"></script>
+<script src="/js/main.js?time={{ $timestamp }}"></script>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({
@@ -120,5 +119,6 @@
         enable_page_level_ads: true
     });
 </script>
+@stack('scripts')
 </body>
 </html>
