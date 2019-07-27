@@ -15,13 +15,6 @@
  *    limitations under the License.
  */
 
-if (!function_exists('config'))
-{
-    function config($key = null) {
-        //
-    }
-}
-
 if (!function_exists('httpCodeToHeaderString'))
 {
     function httpCodeToHeaderString(int $code = NULL) {

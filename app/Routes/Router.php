@@ -59,15 +59,15 @@ class Router {
         $uri = $_SERVER['REQUEST_URI'];
 
         // Strip query string (?foo=bar) and decode URI
-        if (false !== $pos = strpos($uri, '?')) {
-            $uri = substr($uri, 0, $pos);
+        if (false !== $pos = \strpos($uri, '?')) {
+            $uri = \substr($uri, 0, $pos);
         }
-        $uri = rawurldecode($uri);
+        $uri = \rawurldecode($uri);
 
         $routeInfo = $this->dispatcher->dispatch($httpMethod, $uri);
         switch ($routeInfo[0]) {
             case FastRoute\Dispatcher::NOT_FOUND:
-                header(httpCodeToHeaderString(404), true, 404);
+                \header(httpCodeToHeaderString(404), true, 404);
                 echo $this->blade->view('errors.404');
                 break;
             case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:

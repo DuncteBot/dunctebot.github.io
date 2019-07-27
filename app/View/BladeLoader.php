@@ -50,7 +50,7 @@ class BladeLoader
         });
 
         $this->renderer->addCustomCompiler('generateCommands', function () {
-            $commands = json_decode(file_get_contents(__DIR__ . '/../../resources/commands.json'));
+            $commands = \json_decode(\file_get_contents(__DIR__ . '/../../resources/commands.json'));
             $output = '';
 
             foreach ($commands as $command) {
@@ -61,7 +61,7 @@ class BladeLoader
         });
 
         $this->renderer->addCustomCompiler('insertCommandsJson', function () {
-            return file_get_contents(__DIR__ . '/../../resources/commands.json');
+            return \file_get_contents(__DIR__ . '/../../resources/commands.json');
         });
 
         $this->shares = require __DIR__ . '/../../resources/viewShares.php';

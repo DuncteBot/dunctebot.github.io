@@ -23,7 +23,12 @@ class RouteHandler {
 
     public function home(BladeLoader $blade)
     {
-        return $blade->view('home');
+        $commands = \json_decode(\file_get_contents(__DIR__ . '/../../resources/commands.json'));
+        $rand = \array_rand($commands);
+
+        return $blade->view('home', [
+            'randomCmd' => $commands[$rand]->name,
+        ]);
     }
 
     public function commands(BladeLoader $blade)
