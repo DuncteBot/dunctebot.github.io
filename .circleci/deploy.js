@@ -36,7 +36,7 @@ const config = {
         'public/.*',
         'resources/**',
         'storage/**',
-        'vendor/**',
+        // 'vendor/**',
     ],
     debug: true,
 };
