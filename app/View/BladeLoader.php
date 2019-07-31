@@ -44,17 +44,20 @@ class BladeLoader
 
     public function loadShares()
     {
+        $this->shares = require __DIR__ . '/../../resources/viewShares.php';
+
         // Custom compilers before loading the engine
         $this->renderer->addCustomCompiler('checkActiveClass', function ($expression) {
             return '<?php if($__env->yieldContent(\'title\') === ('.$expression.')) { echo \'class="active"\'; } ?>';
         });
 
-        $this->renderer->addCustomCompiler('generateCommands', function () {
+        $prefix = $this->shares['prefix'];
+        $this->renderer->addCustomCompiler('generateCommands', function () use ($prefix) {
             $commands = \json_decode(\file_get_contents(__DIR__ . '/../../resources/commands.json'));
             $output = '';
 
             foreach ($commands as $command) {
-                $output .= '<tr id="'.$command->name.'"><td><?php echo $prefix; ?>'.$command->name.'</td><td>'.$command->help.'</td></tr>';
+                $output .= '<tr id="'.$command->name.'"><td>'.$prefix.$command->name.'</td><td>'.$command->help.'</td></tr>';
             }
 
             return $output;
@@ -63,8 +66,6 @@ class BladeLoader
         $this->renderer->addCustomCompiler('insertCommandsJson', function () {
             return \file_get_contents(__DIR__ . '/../../resources/commands.json');
         });
-
-        $this->shares = require __DIR__ . '/../../resources/viewShares.php';
         $engine = $this->renderer->getEngine();
 
         foreach ($this->shares as $key => $value) {
