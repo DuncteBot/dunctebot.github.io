@@ -51,5 +51,5 @@
 
 @push('scripts')
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script src="/public/js/suggest.js"></script>
+    <script src="/js/suggest.js"></script>
 @endpush
