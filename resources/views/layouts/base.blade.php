@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="/css/materialize.custom.css?time={{ $timestamp }}"/>
     <link rel="stylesheet" href="/css/style.css?time={{ $timestamp }}"/>
     <link rel="stylesheet" href="/css/animate.css?time={{ $timestamp }}"/>
+    @stack('styles')
 
     <title>@yield('title')</title>
 </head>

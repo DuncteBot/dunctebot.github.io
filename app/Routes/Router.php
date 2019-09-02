@@ -43,6 +43,7 @@ class Router {
         $this->dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $router) {
             $router->addRoute('GET', '/', 'home');
             $router->addRoute('GET', '/commands', 'commands');
+            $router->addRoute('GET', '/donate', 'donate');
             $router->addRoute('GET', '/suggest', 'suggest');
             $router->addRoute('GET', '/commands_botlist', 'commandsBotlist');
             $router->addRoute('GET', '/liveServerCount', 'liveServerCount');

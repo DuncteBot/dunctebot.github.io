@@ -41,6 +41,12 @@ class RouteHandler {
         return $blade->view('suggest');
     }
 
+    public function donate(BladeLoader $blade)
+    {
+        return $blade->view('donate');
+    }
+
+
     public function commandsBotlist(BladeLoader $blade)
     {
         return $blade->view('commands_botlist');

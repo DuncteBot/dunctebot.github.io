@@ -3,10 +3,10 @@
 @section('title', 'Live Server Count')
 
 @section('content')
-    <div class="center flow-text">
+    <section class="center flow-text">
         <h1>DuncteBot is currently in <span id="server_count">0</span> servers</h1>
         <h3><a href="{{ $botInvite }}" target="_blank">Click here to invite</a></h3>
-    </div>
+    </section>
 @endsection
 
 @push('scripts')
