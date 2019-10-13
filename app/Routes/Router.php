@@ -72,7 +72,8 @@ class Router {
                 echo $this->blade->view('errors.404');
                 break;
             case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
-                $allowedMethods = $routeInfo[1];
+//                $allowedMethods = $routeInfo[1];
+                \header(httpCodeToHeaderString(405), true, 405);
                 // ... 405 Method Not Allowed
                 break;
             case FastRoute\Dispatcher::FOUND:
