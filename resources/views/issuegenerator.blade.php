@@ -35,7 +35,7 @@
                 <div class="col s12">
                     https://discord.gg/
                     <div class="input-field inline">
-                        <input id="inv" type="text" class="validate" pattern="[a-z0-9-]+" required>
+                        <input id="inv" type="text" class="validate" pattern="[a-zA-Z0-9-]+" required>
                         <label for="inv">Server invite</label>
                         <span class="helper-text" data-error="That does not look like a valid discord invite"
                               data-success=""></span>
