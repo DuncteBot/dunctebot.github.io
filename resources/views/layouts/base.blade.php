@@ -92,8 +92,8 @@
                     <li><a class="grey-text text-lighten-3" href="{{ $guildInvite }}" target="_blank">Join server</a></li>
                     <li><a class="grey-text text-lighten-3" href="https://paypal.me/duncte123"
                            target="_blank">Donate</a></li>
-                    <li><a class="grey-text text-lighten-3" href="https://patreon.com/DuncteBot"
-                           target="_blank">Patreon</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/DuncteBot/dunctebot.github.io"
+                           target="_blank">Github</a></li>
                     <li><a href="https://www.patreon.com/bePatron?u=6419542" data-patreon-widget-type="become-patron-button">Become a Patron!</a></li>
                 </ul>
             </div>
