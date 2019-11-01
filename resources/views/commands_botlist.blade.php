@@ -40,7 +40,7 @@
 @push('scripts')
     <script>
         const commandsRaw = @insertCommandsJson;
-        const prefix = '{{ $prefix }}';
+        const prefix = '{!! $prefix !!}';
     </script>
     <script src="/js/commandSearch.js"></script>
 @endpush

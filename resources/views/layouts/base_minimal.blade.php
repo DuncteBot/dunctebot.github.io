@@ -9,17 +9,17 @@
     <meta name="author" content="duncte123"/>
     <meta name="application-name" content="DuncteBot"/>
     <meta name="keywords" content="discord, bot, music, youtube, google, best discord bot, spotify, rythm"/>
-    <meta name="description" content="{{ $description }}"/>
+    <meta name="description" content="{!! $description !!}"/>
     <meta content="DuncteBot" property="og:site_name"/>
     <meta content="@yield('title')" property="og:title"/>
     <meta content="website" property="og:type"/>
-    <meta content="{{ $description }}" property="og:description"/>
-    <meta name="theme-color" content="{{ $color }}"/>
-    <meta name="msapplication-TileColor" content="{{ $color }}"/>
+    <meta content="{!! $description !!}" property="og:description"/>
+    <meta name="theme-color" content="{!! $color !!}"/>
+    <meta name="msapplication-TileColor" content="{!! $color !!}"/>
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@DuncteBot"/>
     <meta name="twitter:title" content="@yield('title')"/>
-    <meta name="twitter:description" content="{{ $description }}"/>
+    <meta name="twitter:description" content="{!! $description !!}"/>
     <meta name="twitter:image" content="/img/favicon.png"/>
 
     <meta content="/img/favicon.png" property="og:image"/>
@@ -29,15 +29,15 @@
 
     <style>
         * {
-            --color: {{ $color }};
+            --color: {!! $color !!};
         }
     </style>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="/css/materialize.custom.css?time={{ $timestamp }}"/>
-    <link rel="stylesheet" href="/css/style.css?time={{ $timestamp }}"/>
-    <link rel="stylesheet" href="/css/animate.css?time={{ $timestamp }}"/>
+    <link rel="stylesheet" href="/css/materialize.custom.css?time={!! $timestamp !!}"/>
+    <link rel="stylesheet" href="/css/style.css?time={!! $timestamp !!}"/>
+    <link rel="stylesheet" href="/css/animate.css?time={!! $timestamp !!}"/>
 
     <title>@yield('title')</title>
 </head>

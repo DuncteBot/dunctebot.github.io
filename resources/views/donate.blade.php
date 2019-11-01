@@ -26,44 +26,52 @@
             </p>
         </div>
         <div class="row center">
-            <a href="" class="btn-large waves-effect waves-light" target="_blank">Patreon</a>
-            <a href="" class="btn-large waves-effect waves-light" target="_blank">Paypal</a>
+            <a href="https://patreon.com/DuncteBot" class="btn-large waves-effect waves-light" target="_blank">Patreon</a>
+            <a href="https://paypal.me/duncte123" class="btn-large waves-effect waves-light" target="_blank">Paypal</a>
         </div>
     </section>
 
+    <div class="row">
+        <div class="divider"></div>
+    </div>
+
     <section>
         <div class="flow-text row">
-            <p>Our donators</p>
+            <p>Our Patrons</p>
+            <p>Thanks to our patrons we can improve the bot even more</p>
         </div>
 
         <div class="row">
-            <table class="striped">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Website</th>
-                    <th>Donation</th>
-                </tr>
-                </thead>
+            <div class="col offset-s3 s6">
+                <table class="striped centered z-depth-2">
+                    {{--<thead>
+                    <tr>
+                        <th>Username</th>
+                    </tr>
+                    </thead>--}}
 
-                <tbody>
-                <tr>
-                    <td>Alvin</td>
-                    <td>Eclair</td>
-                    <td>$0.87</td>
-                </tr>
-                <tr>
-                    <td>Alan</td>
-                    <td>Jellybean</td>
-                    <td>$3.76</td>
-                </tr>
-                <tr>
-                    <td>Jonathan</td>
-                    <td>Lollipop</td>
-                    <td>$7.00</td>
-                </tr>
-                </tbody>
-            </table>
+                    <tbody>
+                    <tr>
+                        <td>APHVNTOM</td>
+                    </tr>
+                    <tr>
+                        <td>Jericho-23</td>
+                    </tr>
+                    <tr>
+                        <td>Little</td>
+                    </tr>
+                    <tr>
+                        <td>Martin</td>
+                    </tr>
+                    <tr>
+                        <td>p4ck3ts3nd3r</td>
+                    </tr>
+                    <tr>
+                        <td>Sikor</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 @endsection

@@ -15,7 +15,7 @@
             <p>Make sure to check our <a href="https://trello.com/b/iSaxpcGR/skybot-suggestions" target="_blank">Trello
                     board</a> to see if someone already suggested your idea.</p>
             <p>Make sure to join our discord server so that we can contact you if needed.
-                <a href="{{ $guildInvite }}" target="_blank">Click here</a></p>
+                <a href="{!! $guildInvite !!}" target="_blank">Click here</a></p>
 
             <form id="quotesForm" onsubmit="return false;" method="post" autocomplete="off">
                 <div class="input-field">
@@ -40,7 +40,7 @@
                 </div>
 
                 <button class="btn waves-effect waves-light waves-ripple blue accent-4 g-recaptcha"
-                        data-sitekey="{{ $chaptaSiteKey }}"
+                        data-sitekey="{!! $chaptaSiteKey !!}"
                         data-callback="makeSuggestion">Submit
                 </button>
                 <span id="msg" class="fadeOut"></span>

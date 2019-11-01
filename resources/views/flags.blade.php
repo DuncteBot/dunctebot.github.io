@@ -20,11 +20,11 @@
         <div class="col s12 m3">
             <div class="card small">
                 <div class="card-image">
-                    <img src="/img/flags/{{ $flag['file'] }}" alt="{{ $flag['alt'] }}"/>
+                    <img src="/img/flags/{!! $flag['file'] !!}" alt="{!! $flag['alt'] !!}"/>
                 </div>
                 <div class="card-content">
-                    <p>Command: <br/><code>db!flag {{ $flag['cmd'] }} [@user]</code></p>
-                    <p>{{ $flag['alt'] }}</p>
+                    <p>Command: <br/><code>db!flag {!! $flag['cmd'] !!} [@user]</code></p>
+                    <p>{!! $flag['alt'] !!}</p>
                 </div>
             </div>
         </div>

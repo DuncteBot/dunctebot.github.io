@@ -9,17 +9,17 @@
     <meta name="author" content="duncte123"/>
     <meta name="application-name" content="DuncteBot"/>
     <meta name="keywords" content="discord, bot, music, youtube, google, best discord bot, spotify, rythm"/>
-    <meta name="description" content="{{ $description }}"/>
+    <meta name="description" content="{!! $description !!}"/>
     <meta property="og:site_name" content="DuncteBot"/>
     <meta property="og:title" content="@yield('title')"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:description" content="{{ $description }}"/>
-    <meta name="theme-color" content="{{ $color }}"/>
-    <meta name="msapplication-TileColor" content="{{ $color }}"/>
+    <meta property="og:description" content="{!! $description !!}"/>
+    <meta name="theme-color" content="{!! $color !!}"/>
+    <meta name="msapplication-TileColor" content="{!! $color !!}"/>
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@DuncteBot"/>
     <meta name="twitter:title" content="@yield('title')"/>
-    <meta name="twitter:description" content="{{ $description }}"/>
+    <meta name="twitter:description" content="{!! $description !!}"/>
     <meta name="twitter:image" content="/img/favicon.png"/>
 
     <meta property="og:image" content="/img/favicon.png"/>
@@ -29,15 +29,15 @@
 
     <style>
         * {
-            --color: {{ $color }};
+            --color: {!! $color !!};
         }
     </style>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="/css/materialize.custom.css?time={{ $timestamp }}"/>
-    <link rel="stylesheet" href="/css/style.css?time={{ $timestamp }}"/>
-    <link rel="stylesheet" href="/css/animate.css?time={{ $timestamp }}"/>
+    <link rel="stylesheet" href="/css/materialize.custom.css?time={!! $timestamp !!}"/>
+    <link rel="stylesheet" href="/css/style.css?time={!! $timestamp !!}"/>
+    <link rel="stylesheet" href="/css/animate.css?time={!! $timestamp !!}"/>
     @stack('styles')
 
     <title>@yield('title')</title>
@@ -55,7 +55,8 @@
                         <li @checkActiveClass('Home') ><a href="/">Home</a></li>
                         <li @checkActiveClass('List of commands') ><a href="/commands">Commands</a></li>
                         <li @checkActiveClass('Leave a suggestion') ><a href="/suggest">Suggest</a></li>
-                        <li><a href="{{ $dashboardDomain }}">Dashboard</a></li>
+                        <li @checkActiveClass('Donate to DuncteBot') ><a href="/donate">Donators</a></li>
+                        <li><a href="{!! $dashboardDomain !!}">Dashboard</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,7 +67,8 @@
         <li @checkActiveClass('Home') ><a class="discord-text text-full-white" href="/">Home</a></li>
         <li @checkActiveClass('List of commands') ><a class="discord-text text-full-white" href="/commands">Commands</a></li>
         <li @checkActiveClass('Leave a suggestion') ><a class="discord-text text-full-white" href="/suggest">Suggest</a></li>
-        <li><a class="discord-text text-full-white" href="{{ $dashboardDomain }}">Dashboard</a></li>
+        <li @checkActiveClass('Donate to DuncteBot') ><a class="discord-text text-full-white" href="/donate">Donators</a></li>
+        <li><a class="discord-text text-full-white" href="{!! $dashboardDomain !!}">Dashboard</a></li>
     </ul>
 </header>
 
@@ -82,19 +84,23 @@
             <div class="col l6 s12">
                 <h5 class="white-text">DuncteBot</h5>
                 <p class="grey-text text-lighten-4">A fast multipurpose discord bot that plays music from Spotify</p>
-                <a href="https://twitter.com/{{ $twitterUsername }}?ref_src=twsrc%5Etfw" class="twitter-follow-button"
-                   data-show-count="true">Follow {{ '@' . $twitterUsername }}</a>
+                <a href="https://twitter.com/{!! $twitterUsername !!}?ref_src=twsrc%5Etfw" class="twitter-follow-button"
+                   data-show-count="true">Follow {!! '@' . $twitterUsername !!}</a>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="{{ $botInvite }}" target="_blank">Invite bot</a></li>
-                    <li><a class="grey-text text-lighten-3" href="{{ $guildInvite }}" target="_blank">Join server</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{!! $botInvite !!}" target="_blank">Invite bot</a></li>
+                    <li><a class="grey-text text-lighten-3" href="{!! $guildInvite !!}" target="_blank">Join server</a></li>
                     <li><a class="grey-text text-lighten-3" href="https://paypal.me/duncte123"
                            target="_blank">Donate</a></li>
                     <li><a class="grey-text text-lighten-3" href="https://github.com/DuncteBot/dunctebot.github.io"
                            target="_blank">Github</a></li>
-                    <li><a href="https://www.patreon.com/bePatron?u=6419542" data-patreon-widget-type="become-patron-button">Become a Patron!</a></li>
+                    <li>
+                        <p>
+                            <a href="https://www.patreon.com/bePatron?u=6419542" data-patreon-widget-type="become-patron-button">Become a Patron!</a>
+                        </p>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -120,9 +126,9 @@
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
-    const apiPrefix = "{{ $apiPrefix }}";
+    const apiPrefix = "{!! $apiPrefix !!}";
 </script>
-<script src="/js/main.js?time={{ $timestamp }}"></script>
+<script src="/js/main.js?time={!! $timestamp !!}"></script>
 @stack('scripts')
 </body>
 </html>

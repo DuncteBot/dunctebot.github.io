@@ -42,18 +42,24 @@
         </div>
     </section>
 
-    <section class="row oh">
+    <div class="row">
         <div class="divider"></div>
+    </div>
+
+    <section class="row oh">
         <div class="center">
             <h3>Invite the bot today</h3>
-            <a class="waves-effect waves-light btn-large blue darken-4 bg" href="{{ $botInvite }}" target="_blank">Click Here</a>
+            <a class="waves-effect waves-light btn-large blue darken-4 bg" href="{!! $botInvite !!}" target="_blank">Click Here</a>
         </div>
     </section>
 
-    <section class="row oh">
+    <div class="row">
         <div class="divider"></div>
+    </div>
+
+    <section class="row oh">
         <div class="center">
-            <h5>Random command: {{ $prefix }}{{ $randomCmd }}</h5>
+            <h5>Random command: {!! $prefix !!}{!! $randomCmd !!}</h5>
             <p>Have you tried that command yet?</p>
         </div>
     </section>
