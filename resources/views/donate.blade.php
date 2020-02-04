@@ -55,9 +55,6 @@
                         <td>APHVNTOM</td>
                     </tr>
                     <tr>
-                        <td>Jericho-23</td>
-                    </tr>
-                    <tr>
                         <td>Little</td>
                     </tr>
                     <tr>
