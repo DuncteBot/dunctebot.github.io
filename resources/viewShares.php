@@ -16,7 +16,7 @@
  */
 
 return [
-    'timestamp' => '965876599',
+    'timestamp' => '1580909487',
     'prefix' => 'db!',
     'title' => 'DuncteBot',
     'description' => 'DuncteBot, a multi-propose bot for moderation and music',

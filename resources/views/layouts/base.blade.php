@@ -107,7 +107,7 @@
     </div>
     <div class="footer-copyright indigo darken-3">
         <div class="container">
-            &copy; 2017-<span id="year"></span> DuncteBot Team
+            &copy; 2017-{!! date('Y') !!} DuncteBot Team
         </div>
     </div>
 </footer>

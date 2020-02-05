@@ -1,0 +1,47 @@
+[
+    {
+        "icon": "flash_on",
+        "caption": "Super Fast",
+        "description": "This bot has really fast response timing on top of having a lot of unique features"
+    },
+    {
+        "icon": "music_note",
+        "caption": "High Quality Music",
+        "description": "On top of us supporting playing music from Spotify, we also provide the music from our high quality music servers"
+    },
+    {
+        "icon": "settings",
+        "caption": "Highly Customizable",
+        "description": "You can customize almost everything on this bot, from the embed colors to custom commands"
+    },
+    {
+        "icon": "av_timer",
+        "caption": "Reminders",
+        "description": "Remind yourself of everything, this can be ether in your dms or in a text channel"
+    },
+    {
+        "icon": "fitness_center",
+        "caption": "Moderation",
+        "description": "With our strong moderation features your moderators are sure to have a great time moderating your server"
+    },
+    {
+        "icon": "code",
+        "caption": "Open source",
+        "description": "No hidden backdoors in the bot, our code is open source so that you are about our security"
+    },
+    {
+        "icon": "pets",
+        "caption": "Cute animals",
+        "description": "With plenty of animal commands we're sure to have one you like and if not, just tell us to add it"
+    },
+    {
+        "icon": "textsms",
+        "caption": "Chat bot",
+        "description": "You will be able to get a good laugh with out AI powered chat bot"
+    },
+    {
+        "icon": "photo_library",
+        "caption": "Image commands",
+        "description": "Change images to many things with our cool image commands"
+    }
+]

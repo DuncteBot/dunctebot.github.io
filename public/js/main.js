@@ -19,7 +19,6 @@ function _(el) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    _("year").innerHTML = new Date().getFullYear();
     M.Sidenav.init(document.querySelectorAll(".sidenav"));
 });
 

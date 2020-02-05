@@ -14,6 +14,17 @@
     </section>
 
     <section class="row flow-text oh">
+        @for($i = 0; $i < count($features); $i++)
+            <div class="col s12 m4">
+                <div class="center delay-{!! $i + 1 !!} promo animated fadeInUp">
+                    <i class="material-icons">{!! $features[$i]->icon !!}</i>
+                    <p class="promo-caption">{!! $features[$i]->caption !!}</p>
+                    <p class="light center">{!! $features[$i]->description !!}</p>
+                </div>
+            </div>
+        @endfor
+
+        <!--
         <div class="col s12 m4">
             <div class="center delay-1 promo animated fadeInUp">
                 <i class="material-icons">flash_on</i>
@@ -40,6 +51,7 @@
                     to custom commands</p>
             </div>
         </div>
+        -->
     </section>
 
     <div class="row">
