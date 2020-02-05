@@ -15,4 +15,6 @@
  *      limitations under the License.
  */
 
-require __DIR__ . '/../app/bootstrap.php';
+$commands = file_get_contents('https://dashboard.dunctebot.com/api/commands.json');
+
+file_put_contents(__DIR__ . '/resources/commands.json', $commands);
