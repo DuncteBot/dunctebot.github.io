@@ -68,12 +68,13 @@ class Router {
         $routeInfo = $this->dispatcher->dispatch($httpMethod, $uri);
         switch ($routeInfo[0]) {
             case FastRoute\Dispatcher::NOT_FOUND:
-                \header(httpCodeToHeaderString(404), true, 404);
+                \http_response_code(404);
+
                 echo $this->blade->view('errors.404');
                 break;
             case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
 //                $allowedMethods = $routeInfo[1];
-                \header(httpCodeToHeaderString(405), true, 405);
+                \http_response_code(405);
                 // ... 405 Method Not Allowed
                 break;
             case FastRoute\Dispatcher::FOUND:
