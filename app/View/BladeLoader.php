@@ -17,15 +17,30 @@
 
 namespace App\View;
 
-use Windwalker\Renderer\BladeRenderer;
+use Illuminate\Events\Dispatcher;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\View\Compilers\BladeCompiler;
+use Illuminate\View\Engines\CompilerEngine;
+use Illuminate\View\Engines\EngineResolver;
+use Illuminate\View\Factory as BladeEnvironment;
+use Illuminate\View\FileViewFinder;
 
 class BladeLoader
 {
-    /**
-     * @var BladeRenderer
+    /*
+     * @var \Windwalker\Renderer\BladeRenderer
      */
-    private $renderer;
-    private $shares;
+//    private $renderer;
+
+    /**
+     * @var BladeEnvironment
+     */
+    private $bladeEnv;
+
+    /**
+     * @var BladeCompiler
+     */
+    private $bladeCompiler;
 
     /**
      * BladeLoader constructor.
@@ -35,24 +50,43 @@ class BladeLoader
     public function __construct($viewPath)
     {
         $paths = [$viewPath];
-        $this->renderer = new BladeRenderer($paths, [
-            'cache_path' => __DIR__ . '/../../storage/app/views',
-        ]);
+        $cachePath = __DIR__ . '/../../storage/app/views';
+        $resolver = new EngineResolver();
+        $filesystem = new Filesystem();
+        $compiler =  new CompilerEngine(new BladeCompiler($filesystem, $cachePath));
+        $finder = new FileViewFinder($filesystem, $paths);
+        $dispatcher = new Dispatcher();
+
+        $resolver->register(
+            'blade',
+            function () use ($compiler) {
+                return $compiler;
+            }
+        );
+
+        $this->bladeEnv = new BladeEnvironment($resolver, $finder, $dispatcher);
+
+        /** @var BladeCompiler $bladeCompiler */
+        $this->bladeCompiler = $compiler->getCompiler();
+
+        /*$this->renderer = new BladeRenderer($paths, [
+            'cache_path' => $cachePath,
+        ]);*/
 
         $this->loadShares();
     }
 
     public function loadShares()
     {
-        $this->shares = require __DIR__ . '/../../resources/viewShares.php';
+        $shares = require __DIR__ . '/../../resources/viewShares.php';
 
         // Custom compilers before loading the engine
-        $this->renderer->addCustomCompiler('checkActiveClass', function ($expression) {
+        $this->addCompiler('checkActiveClass', function ($expression) {
             return '<?php if($__env->yieldContent(\'title\') === ('.$expression.')) { echo \'class="active"\'; } ?>';
         });
 
-        $prefix = $this->shares['prefix'];
-        $this->renderer->addCustomCompiler('generateCommands', function () use ($prefix) {
+        $prefix = $shares['prefix'];
+        $this->addCompiler('generateCommands', function () use ($prefix) {
             $commands = \json_decode(\file_get_contents(__DIR__ . '/../../resources/commands.json'));
             $output = '';
 
@@ -63,19 +97,28 @@ class BladeLoader
             return $output;
         });
 
-        $this->renderer->addCustomCompiler('insertCommandsJson', function () {
+        $this->addCompiler('insertCommandsJson', function () {
             return \file_get_contents(__DIR__ . '/../../resources/commands.json');
         });
-        $engine = $this->renderer->getEngine();
 
-        foreach ($this->shares as $key => $value) {
+//        $engine = $this->renderer->getEngine();
+        $engine = $this->bladeEnv;
+
+        foreach ($shares as $key => $value) {
             $engine->share($key, $value);
         }
     }
 
+    private function addCompiler(string $name, \Closure $callback)
+    {
+//        $this->renderer->addCustomCompiler($name, $callback);
+        $this->bladeCompiler->directive($name, $callback);
+    }
+
     public function view(string $filename, array $data = []): string
     {
-        return $this->renderer->render($filename, $data);
+//        return $this->renderer->render($filename, $data);
+        return $this->bladeEnv->make($filename, $data)->render();
     }
 
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e58880edf49e9036de602866f270f110",
+    "content-hash": "32cba1da66768d7e4e20d6d723dd45d4",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -75,28 +75,27 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v5.8.36",
+            "version": "v6.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "b42e5ef939144b77f78130918da0ce2d9ee16574"
+                "reference": "7af0de3a43acaa78c4418b548fb2a66b0ce851c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/b42e5ef939144b77f78130918da0ce2d9ee16574",
-                "reference": "b42e5ef939144b77f78130918da0ce2d9ee16574",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/7af0de3a43acaa78c4418b548fb2a66b0ce851c6",
+                "reference": "7af0de3a43acaa78c4418b548fb2a66b0ce851c6",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.8.*",
-                "illuminate/support": "5.8.*",
-                "php": "^7.1.3",
+                "illuminate/contracts": "^6.0",
+                "php": "^7.2",
                 "psr/container": "^1.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.8-dev"
+                    "dev-master": "6.x-dev"
                 }
             },
             "autoload": {
@@ -116,31 +115,31 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "https://laravel.com",
-            "time": "2019-08-20T02:00:23+00:00"
+            "time": "2020-01-07T13:47:03+00:00"
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.8.36",
+            "version": "v6.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "00fc6afee788fa07c311b0650ad276585f8aef96"
+                "reference": "f1326dfae72c646a8598138b446347954f5e991e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/00fc6afee788fa07c311b0650ad276585f8aef96",
-                "reference": "00fc6afee788fa07c311b0650ad276585f8aef96",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/f1326dfae72c646a8598138b446347954f5e991e",
+                "reference": "f1326dfae72c646a8598138b446347954f5e991e",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1.3",
+                "php": "^7.2",
                 "psr/container": "^1.0",
                 "psr/simple-cache": "^1.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.8-dev"
+                    "dev-master": "6.x-dev"
                 }
             },
             "autoload": {
@@ -160,32 +159,32 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2019-07-30T13:57:21+00:00"
+            "time": "2020-01-07T13:47:03+00:00"
         },
         {
             "name": "illuminate/events",
-            "version": "v5.8.36",
+            "version": "v6.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
-                "reference": "a85d7c273bc4e3357000c5fc4812374598515de3"
+                "reference": "977a641a8a09ef7fec6e9a69d590149532232405"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/events/zipball/a85d7c273bc4e3357000c5fc4812374598515de3",
-                "reference": "a85d7c273bc4e3357000c5fc4812374598515de3",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/977a641a8a09ef7fec6e9a69d590149532232405",
+                "reference": "977a641a8a09ef7fec6e9a69d590149532232405",
                 "shasum": ""
             },
             "require": {
-                "illuminate/container": "5.8.*",
-                "illuminate/contracts": "5.8.*",
-                "illuminate/support": "5.8.*",
-                "php": "^7.1.3"
+                "illuminate/container": "^6.0",
+                "illuminate/contracts": "^6.0",
+                "illuminate/support": "^6.0",
+                "php": "^7.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.8-dev"
+                    "dev-master": "6.x-dev"
                 }
             },
             "autoload": {
@@ -205,39 +204,39 @@
             ],
             "description": "The Illuminate Events package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-18T18:37:54+00:00"
+            "time": "2020-02-03T14:27:32+00:00"
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v5.8.36",
+            "version": "v6.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "494ba903402d64ec49c8d869ab61791db34b2288"
+                "reference": "58c1d87e80f72bc09201107553a08471577fbe79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/494ba903402d64ec49c8d869ab61791db34b2288",
-                "reference": "494ba903402d64ec49c8d869ab61791db34b2288",
+                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/58c1d87e80f72bc09201107553a08471577fbe79",
+                "reference": "58c1d87e80f72bc09201107553a08471577fbe79",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.8.*",
-                "illuminate/support": "5.8.*",
-                "php": "^7.1.3",
-                "symfony/finder": "^4.2"
+                "illuminate/contracts": "^6.0",
+                "illuminate/support": "^6.0",
+                "php": "^7.2",
+                "symfony/finder": "^4.3.4"
             },
             "suggest": {
                 "league/flysystem": "Required to use the Flysystem local and FTP drivers (^1.0).",
                 "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (^1.0).",
                 "league/flysystem-cached-adapter": "Required to use the Flysystem cache (^1.0).",
-                "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (^1.0).",
-                "league/flysystem-sftp": "Required to use the Flysystem SFTP driver (^1.0)."
+                "league/flysystem-sftp": "Required to use the Flysystem SFTP driver (^1.0).",
+                "psr/http-message": "Required to allow Storage::put to accept a StreamInterface (^1.0)"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.8-dev"
+                    "dev-master": "6.x-dev"
                 }
             },
             "autoload": {
@@ -257,45 +256,45 @@
             ],
             "description": "The Illuminate Filesystem package.",
             "homepage": "https://laravel.com",
-            "time": "2019-08-14T13:38:15+00:00"
+            "time": "2020-01-28T14:30:01+00:00"
         },
         {
             "name": "illuminate/support",
-            "version": "v5.8.36",
+            "version": "v6.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "df4af6a32908f1d89d74348624b57e3233eea247"
+                "reference": "78b85d2ae298a46edfc57baa5eddd2594b9d313a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/df4af6a32908f1d89d74348624b57e3233eea247",
-                "reference": "df4af6a32908f1d89d74348624b57e3233eea247",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/78b85d2ae298a46edfc57baa5eddd2594b9d313a",
+                "reference": "78b85d2ae298a46edfc57baa5eddd2594b9d313a",
                 "shasum": ""
             },
             "require": {
                 "doctrine/inflector": "^1.1",
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "illuminate/contracts": "5.8.*",
-                "nesbot/carbon": "^1.26.3 || ^2.0",
-                "php": "^7.1.3"
+                "illuminate/contracts": "^6.0",
+                "nesbot/carbon": "^2.0",
+                "php": "^7.2"
             },
             "conflict": {
                 "tightenco/collect": "<5.5.33"
             },
             "suggest": {
-                "illuminate/filesystem": "Required to use the composer class (5.8.*).",
+                "illuminate/filesystem": "Required to use the composer class (^6.0).",
                 "moontoast/math": "Required to use ordered UUIDs (^1.1).",
                 "ramsey/uuid": "Required to use Str::uuid() (^3.7).",
-                "symfony/process": "Required to use the composer class (^4.2).",
-                "symfony/var-dumper": "Required to use the dd function (^4.2).",
-                "vlucas/phpdotenv": "Required to use the env helper (^3.3)."
+                "symfony/process": "Required to use the composer class (^4.3.4).",
+                "symfony/var-dumper": "Required to use the dd function (^4.3.4).",
+                "vlucas/phpdotenv": "Required to use the Env class and env helper (^3.3)."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.8-dev"
+                    "dev-master": "6.x-dev"
                 }
             },
             "autoload": {
@@ -318,36 +317,36 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2019-12-12T14:16:47+00:00"
+            "time": "2020-02-03T14:22:17+00:00"
         },
         {
             "name": "illuminate/view",
-            "version": "v5.8.36",
+            "version": "v6.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
-                "reference": "c859919bc3be97a3f114377d5d812f047b8ea90d"
+                "reference": "1b691e94f8fe8c2e3f05d14a2f63e98cdb332ea4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/view/zipball/c859919bc3be97a3f114377d5d812f047b8ea90d",
-                "reference": "c859919bc3be97a3f114377d5d812f047b8ea90d",
+                "url": "https://api.github.com/repos/illuminate/view/zipball/1b691e94f8fe8c2e3f05d14a2f63e98cdb332ea4",
+                "reference": "1b691e94f8fe8c2e3f05d14a2f63e98cdb332ea4",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "illuminate/container": "5.8.*",
-                "illuminate/contracts": "5.8.*",
-                "illuminate/events": "5.8.*",
-                "illuminate/filesystem": "5.8.*",
-                "illuminate/support": "5.8.*",
-                "php": "^7.1.3",
-                "symfony/debug": "^4.2"
+                "illuminate/container": "^6.0",
+                "illuminate/contracts": "^6.0",
+                "illuminate/events": "^6.0",
+                "illuminate/filesystem": "^6.0",
+                "illuminate/support": "^6.0",
+                "php": "^7.2",
+                "symfony/debug": "^4.3.4"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.8-dev"
+                    "dev-master": "6.x-dev"
                 }
             },
             "autoload": {
@@ -367,7 +366,7 @@
             ],
             "description": "The Illuminate View package.",
             "homepage": "https://laravel.com",
-            "time": "2019-06-20T13:13:59+00:00"
+            "time": "2020-01-21T20:50:14+00:00"
         },
         {
             "name": "league/flysystem",
@@ -1010,116 +1009,6 @@
                 "standards"
             ],
             "time": "2019-11-18T17:27:11+00:00"
-        },
-        {
-            "name": "windwalker/renderer",
-            "version": "3.5.16",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ventoviro/windwalker-renderer.git",
-                "reference": "b157f2832dac02209db032cb61e21b8264ee4499"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ventoviro/windwalker-renderer/zipball/b157f2832dac02209db032cb61e21b8264ee4499",
-                "reference": "b157f2832dac02209db032cb61e21b8264ee4499",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.3",
-                "windwalker/structure": "~3.0"
-            },
-            "require-dev": {
-                "illuminate/view": "5.2.*",
-                "league/plates": "3.*",
-                "mustache/mustache": "2.*",
-                "twig/twig": "1.*",
-                "windwalker/dom": "~3.0",
-                "windwalker/filesystem": "~3.0",
-                "windwalker/test": "~3.0"
-            },
-            "suggest": {
-                "illuminate/view": "Install 5.* if you require Laravel Blade engine.",
-                "league/plates": "Install 3.* if you require Plates template engine.",
-                "mustache/mustache": "Install 2.* if you require Mustache engine.",
-                "twig/twig": "Install 1.* if you require Twig engine."
-            },
-            "type": "windwalker-package",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Windwalker\\Renderer\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-2.0-or-later"
-            ],
-            "description": "Windwalker Renderer package",
-            "homepage": "https://github.com/ventoviro/windwalker-renderer",
-            "keywords": [
-                "framework",
-                "renderer",
-                "windwalker"
-            ],
-            "time": "2019-10-26T15:42:26+00:00"
-        },
-        {
-            "name": "windwalker/structure",
-            "version": "3.5.16",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ventoviro/windwalker-structure.git",
-                "reference": "4e0ea9cf1b73ad6c6651fc4f3ed86ade90eea04d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ventoviro/windwalker-structure/zipball/4e0ea9cf1b73ad6c6651fc4f3ed86ade90eea04d",
-                "reference": "4e0ea9cf1b73ad6c6651fc4f3ed86ade90eea04d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.3"
-            },
-            "require-dev": {
-                "ext-json": "*",
-                "laktak/hjson": "^2.1",
-                "symfony/yaml": "3.*",
-                "windwalker/test": "~3.0",
-                "yosymfony/toml": "^1.0"
-            },
-            "suggest": {
-                "laktak/hjson": "Install ~2.0 if you require HJSON support.",
-                "symfony/yaml": "Install 3.* if you require YAML support.",
-                "yosymfony/toml": "Install ~1.0 if you require TOML support."
-            },
-            "type": "windwalker-package",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Windwalker\\Structure\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-2.0-or-later"
-            ],
-            "description": "Windwalker Structure package",
-            "homepage": "https://github.com/ventoviro/windwalker-structure",
-            "keywords": [
-                "framework",
-                "structure",
-                "windwalker"
-            ],
-            "time": "2019-10-27T07:38:41+00:00"
         }
     ],
     "packages-dev": [],
