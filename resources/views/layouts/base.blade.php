@@ -130,5 +130,6 @@
 </script>
 <script src="/js/main.js?time={!! $timestamp !!}"></script>
 @stack('scripts')
+<script data-ad-client="ca-pub-6855340104827815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </body>
 </html>
