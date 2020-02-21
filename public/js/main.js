@@ -14,7 +14,7 @@
  *      limitations under the License.
  */
 
-function _(el) {
+function id(el) {
     return document.getElementById(el);
 }
 

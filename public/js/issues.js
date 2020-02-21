@@ -26,23 +26,23 @@ function addCommand() {
         <span class="helper-text" data-error="Invalid command (should start with db!)" data-success=""></span>
     </div>`;
 
-    _("commandsContainer").appendChild(item);
+    id("commandsContainer").appendChild(item);
 }
 
 function delCMD(id) {
-    const item = _(id);
+    const item = id(id);
     item.parentNode.removeChild(item);
 }
 
 function genJson() {
-    const output = _("output");
-    const modal = M.Modal.init(_("modal1"));
+    const output = id("output");
+    const modal = M.Modal.init(id("modal1"));
     const cmds = Array.from(document.querySelectorAll("input[name='command']")).map(x => x.value);
     const data = {
-        description: _("description").value,
-        detailedReport: _("detailedReport").value,
+        description: id("description").value,
+        detailedReport: id("detailedReport").value,
         lastCommands: cmds,
-        inv: `https://discord.gg/${_("inv").value}`
+        inv: `https://discord.gg/${id("inv").value}`
     };
 
     output.innerHTML = JSON.stringify(data);
