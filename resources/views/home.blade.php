@@ -72,7 +72,8 @@
     <section class="row oh">
         <div class="center">
             <h5>Random command: {!! $prefix !!}{!! $randomCmd !!}</h5>
-            <p>Have you tried that command yet?</p>
+            <p>Why don't you give that command a try</p>
+            <p>Or <a href="/commands">click here</a> to view all commands</p>
         </div>
     </section>
 @endsection
