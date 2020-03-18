@@ -83,5 +83,5 @@
 
 @push('scripts')
     <script src="/js/highlight.pack.js"></script>
-    <script src="/js/issues.js"></script>
+    <script src="/js/issues.js?time={!! $timestamp !!}"></script>
 @endpush
