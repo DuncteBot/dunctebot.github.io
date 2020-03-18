@@ -15,12 +15,12 @@
  */
 
 function addCommand() {
-    const id = (new Date()).getTime();
+    const timeID = (new Date()).getTime();
     const item = document.createElement('div');
 
-    item.id = `cmd-${id}`;
+    item.id = `cmd-${timeID}`;
     item.innerHTML = `
-    <button class="btn red" onclick="delCMD('cmd-${id}'); return false;">X</button>
+    <button class="btn red" onclick="delCMD('cmd-${timeID}'); return false;">X</button>
     <div class="input-field inline">
         <input name="command" type="text" placeholder="db!help drake" pattern="db![a-z0-9 ]+" class="validate" required>
         <span class="helper-text" data-error="Invalid command (should start with db!)" data-success=""></span>
@@ -29,8 +29,8 @@ function addCommand() {
     id("commandsContainer").appendChild(item);
 }
 
-function delCMD(id) {
-    const item = id(id);
+function delCMD(btnId) {
+    const item = id(btnId);
     item.parentNode.removeChild(item);
 }
 
