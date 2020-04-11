@@ -73,7 +73,6 @@ if (!function_exists('verify_captcha')) {
 
             return json_decode($res->getBody())->success;
         } catch (\GuzzleHttp\Exception\ClientException $e) {
-            var_dump($e);
             return false;
         }
     }
@@ -97,7 +96,6 @@ if (!function_exists('add_trello_card')) {
 
             return json_decode($res->getBody());
         } catch (\GuzzleHttp\Exception\ClientException $e) {
-            var_dump($e);
             return null;
         }
     }
