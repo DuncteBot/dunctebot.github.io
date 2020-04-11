@@ -20,6 +20,9 @@ use App\View\BladeLoader;
 
 require __DIR__ .'/../vendor/autoload.php';
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+
 $blade = new BladeLoader(
     __DIR__ . '/../resources/views'
 );

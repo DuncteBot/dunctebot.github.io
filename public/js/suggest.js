@@ -31,7 +31,7 @@ function makeSuggestion(capToken) {
         "g-recaptcha-response": capToken
     });
 
-    fetch(`${apiPrefix}/suggest`, {
+    fetch('/suggest', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

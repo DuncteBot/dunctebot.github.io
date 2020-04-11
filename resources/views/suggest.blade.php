@@ -13,9 +13,7 @@
             <div class="divider"></div>
             <p>If you feel that the bot is missing a feature why not suggest it here?</p>
             <p>Make sure to check our <a href="https://trello.com/b/iSaxpcGR/skybot-suggestions" target="_blank">Trello
-                    board</a> to see if someone already suggested your idea.</p>
-            <p>Make sure to join our discord server so that we can contact you if needed.
-                <a href="{!! $guildInvite !!}" target="_blank">Click here</a></p>
+                    board</a> to see if someone already suggested your idea and join <a href="{!! $guildInvite !!}" target="_blank">our discord</a> so we can contact you if needed.</p>
 
             <form id="quotesForm" onsubmit="return false;" method="post" autocomplete="off">
                 <div class="input-field">
@@ -39,17 +37,18 @@
                     </div>
                 </div>
 
-                <button class="btn waves-effect waves-light waves-ripple blue accent-4 g-recaptcha"
-                        data-sitekey="{!! $chaptaSiteKey !!}"
+                <button class="btn waves-effect waves-light waves-ripple blue accent-4 h-captcha"
+                        data-sitekey="{!! env('HCAPTCHA_KEY') !!}"
                         data-callback="makeSuggestion">Submit
                 </button>
                 <span id="msg" class="fadeOut"></span>
             </form>
+
         </div>
     </div>
 @endsection
 
 @push('scripts')
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script src="/js/suggest.js"></script>
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+    <script src="/js/suggest.js?time={!! $timestamp !!}"></script>
 @endpush

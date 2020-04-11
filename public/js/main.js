@@ -33,6 +33,8 @@ function getMessage(m) {
             return "Could not verify human check, try again later";
         case "no_guild":
             return "The specified server id did not resolve any servers.";
+        case "trello_failed":
+            return "Failed to add card to trello board, try again later";
         default:
             return m;
     }

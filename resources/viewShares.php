@@ -16,7 +16,7 @@
  */
 
 return [
-    'timestamp' => '764833455',
+    'timestamp' => '45123385774',
     'prefix' => 'db!',
     'title' => 'DuncteBot',
     'description' => 'DuncteBot, a multi-propose bot for moderation and music',
@@ -27,5 +27,4 @@ return [
     'color' => '#0751c6',
     'apiPrefix' => 'https://dashboard.dunctebot.com/api',
 //    'apiPrefix' => 'http://localhost:2000/api',
-    'chaptaSiteKey' => '6LfjTkcUAAAAAEmamxPpg5GrcS0n5Mb9_OQp96Sz',
 ];

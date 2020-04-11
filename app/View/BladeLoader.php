@@ -71,12 +71,12 @@ class BladeLoader
         $shares = require __DIR__ . '/../../resources/viewShares.php';
 
         // Custom compilers before loading the engine
-        $this->addDirective('checkActiveClass', function ($expression) {
+        $this->addDirective('checkActiveClass', static function ($expression) {
             return '<?php if($__env->yieldContent(\'title\') === (' . $expression . ')) { echo \'class="active"\'; } ?>';
         });
 
         $prefix = $shares['prefix'];
-        $this->addDirective('generateCommands', function () use ($prefix) {
+        $this->addDirective('generateCommands', static function () use ($prefix) {
             $commands = \json_decode(\file_get_contents(__DIR__ . '/../../resources/commands.json'));
             $output = '';
 
@@ -87,9 +87,13 @@ class BladeLoader
             return $output;
         });
 
-        $this->addDirective('insertCommandsJson', function () {
+        $this->addDirective('insertCommandsJson', static function () {
             return \file_get_contents(__DIR__ . '/../../resources/commands.json');
         });
+
+        /*$this->addDirective('timestamp', static function () {
+            return time();
+        });*/
 
         foreach ($shares as $key => $value) {
             $this->bladeEnv->share($key, $value);

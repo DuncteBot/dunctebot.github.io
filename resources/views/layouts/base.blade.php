@@ -108,6 +108,11 @@
     <div class="footer-copyright indigo darken-3">
         <div class="container">
             &copy; 2017-{!! date('Y') !!} DuncteBot Team
+            <small class="right">
+                This site is protected by hCaptcha and its
+                <a href="https://hcaptcha.com/privacy" target="_blank">Privacy Policy</a> and
+                <a href="https://hcaptcha.com/terms" target="_blank">Terms of Service</a> apply.
+            </small>
         </div>
     </div>
 </footer>
@@ -125,11 +130,8 @@
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script>
-    const apiPrefix = "{!! $apiPrefix !!}";
-</script>
 <script src="/js/main.js?time={!! $timestamp !!}"></script>
 @stack('scripts')
-<script data-ad-client="ca-pub-6855340104827815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!--<script data-ad-client="ca-pub-6855340104827815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
 </body>
 </html>

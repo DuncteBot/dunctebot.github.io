@@ -44,14 +44,78 @@ class RouteHandler {
 
     public function suggest(BladeLoader $blade)
     {
+        any_empty("hello", 'world', 'test');
+
         return $blade->view('suggest');
+    }
+
+    public function submitSuggest()
+    {
+        $in = file_get_contents('php://input');
+
+        if (!$in) {
+            http_response_code(400);
+            return json_response([
+                'status' => 'failure',
+                'message' => 'invalid_json',
+                'code' => '400',
+            ]);
+        }
+
+        $p = json_decode($in, true);
+
+        if (
+            !isset($p['name'], $p['sug'], $p['g-recaptcha-response']) ||
+            any_empty($p['name'], $p['sug'], $p['g-recaptcha-response'])
+        ) {
+            http_response_code(400);
+            return json_response([
+                'status' => 'failure',
+                'message' => 'missing_input',
+                'code' => '400',
+            ]);
+        }
+
+        if (!verify_captcha($p['g-recaptcha-response'])) {
+            http_response_code(400);
+            return json_response([
+                'status' => 'failure',
+                'message' => 'captcha_failed',
+                'code' => '400',
+            ]);
+        }
+
+        $extraDesc = '';
+
+        if (isset($p['desc']) && !empty($p['desc'])) {
+            $extraDesc = "{$p['desc']}\n\n";
+        }
+
+        $description = "{$extraDesc}Suggested by: {$p['name']}\nSuggested from website";
+
+        $trello = add_trello_card($p['sug'], $description);
+
+        if ($trello === null) {
+            http_response_code(400);
+            return json_response([
+                'status' => 'failure',
+                'message' => 'trello_failed',
+                'code' => '400',
+            ]);
+        }
+
+        http_response_code(200);
+        return json_response([
+            'status' => 'success',
+            'trello_url' => $trello->shortUrl,
+            'code' => '200',
+        ]);
     }
 
     public function donate(BladeLoader $blade)
     {
         return $blade->view('donate');
     }
-
 
     public function commandsBotlist(BladeLoader $blade)
     {

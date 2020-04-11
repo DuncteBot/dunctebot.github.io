@@ -45,6 +45,7 @@ class Router {
             $router->addRoute('GET', '/commands', 'commands');
             $router->addRoute('GET', '/donate', 'donate');
             $router->addRoute('GET', '/suggest', 'suggest');
+            $router->addRoute('POST', '/suggest', 'submitSuggest');
             $router->addRoute('GET', '/commands_botlist', 'commandsBotlist');
             $router->addRoute('GET', '/liveServerCount', 'liveServerCount');
             $router->addRoute('GET', '/flags', 'flags');
