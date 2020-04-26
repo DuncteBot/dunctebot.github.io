@@ -47,8 +47,11 @@ class Router {
             $router->addRoute('GET', '/suggest', 'suggest');
             $router->addRoute('POST', '/suggest', 'submitSuggest');
             $router->addRoute('GET', '/commands_botlist', 'commandsBotlist');
-            $router->addRoute('GET', '/liveServerCount', 'liveServerCount');
+//            $router->addRoute('GET', '/liveServerCount', 'liveServerCount');
+
+            # routes that are only linked from the bot
             $router->addRoute('GET', '/flags', 'flags');
+            $router->addRoute('GET', '/radiostreams', 'radiostreams');
             $router->addRoute('GET', '/issuegenerator', 'issueGenerator');
         });
     }

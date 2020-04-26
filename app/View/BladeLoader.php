@@ -91,6 +91,22 @@ class BladeLoader
             return \file_get_contents(__DIR__ . '/../../resources/commands.json');
         });
 
+
+        $this->addDirective('generateRadioList', static function () {
+            $streams = \json_decode(\file_get_contents(__DIR__ . '/../../resources/radio_streams.json'));
+            $output = '';
+
+            foreach ($streams as $stream) {
+                $output .= "<tr id=\"$stream->name\"><td>$stream->name</td><td><a href=\"$stream->website\" target=\"_blank\">$stream->website</a></td></tr>";
+            }
+
+            return $output;
+        });
+
+        $this->addDirective('insertRadioJson', static function () {
+            return \file_get_contents(__DIR__ . '/../../resources/radio_streams.json');
+        });
+
         /*$this->addDirective('timestamp', static function () {
             return time();
         });*/

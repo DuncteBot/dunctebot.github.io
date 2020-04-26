@@ -127,11 +127,6 @@ class RouteHandler {
         return $blade->view('livecount');
     }
 
-    public function issueGenerator(BladeLoader $blade)
-    {
-        return $blade->view('issuegenerator');
-    }
-
     public function flags(BladeLoader $blade)
     {
         return $blade->view('flags', [
@@ -198,5 +193,15 @@ class RouteHandler {
                 ],
             ],
         ]);
+    }
+
+    public function radiostreams(BladeLoader $blade)
+    {
+        return $blade->view('radiostreams');
+    }
+
+    public function issueGenerator(BladeLoader $blade)
+    {
+        return $blade->view('issuegenerator');
     }
 }
