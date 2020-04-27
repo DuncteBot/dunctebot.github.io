@@ -93,7 +93,22 @@ class BladeLoader
 
 
         $this->addDirective('generateRadioList', static function () {
-            $streams = \json_decode(\file_get_contents(__DIR__ . '/../../resources/radio_streams.json'));
+            $compressedPath = __DIR__ . '/../../resources/radio_streams_flat.json';
+
+            // Sort and compress the file once for faster loads next time
+            if (!\file_exists($compressedPath)) {
+                $s = \json_decode(\file_get_contents(__DIR__ . '/../../resources/radio_streams.json'));
+
+                $mapped = array_map(static function ($element) {
+                    return $element->name;
+                }, $s);
+
+                \array_multisort($mapped, SORT_ASC, $s);
+
+                \file_put_contents($compressedPath, \json_encode($s));
+            }
+
+            $streams = \json_decode(\file_get_contents($compressedPath));
             $output = '';
 
             foreach ($streams as $stream) {
