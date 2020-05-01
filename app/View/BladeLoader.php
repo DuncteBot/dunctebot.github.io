@@ -120,7 +120,9 @@ class BladeLoader
             $output = '';
 
             foreach ($streams as $stream) {
-                $output .= "<tr><td>$stream->name</td><td><a href=\"$stream->website\" target=\"_blank\">$stream->website</a></td></tr>";
+                $domain = \parse_url($stream->website)['host'];
+
+                $output .= "<tr><td>$stream->name</td><td><a href=\"$stream->website\" target=\"_blank\">$domain</a></td></tr>";
             }
 
             return $output;

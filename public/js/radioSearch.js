@@ -17,19 +17,21 @@
 //commands.find(x => x.name === name || x.aliases.includes(name))
 const input = document.getElementById('search_input');
 const display = document.getElementById('display');
+// https://stackoverflow.com/questions/6321763/fastest-way-to-search-string-in-javascript
+const searchDebounced =  _.debounce(() => {
+    let sorted = window.searchData;
 
-input.addEventListener('keyup', () => {
-    setTimeout(() => {
-        let sorted = searchData;
+    if (input.value) {
+        const toSearch = input.value.toLowerCase();
 
-        if (input.value) {
-            const toSearch = input.value.toLowerCase();
+        sorted = sorted.filter(x => x.name.toLowerCase().includes(toSearch) || x.website.toLowerCase().includes(toSearch));
+    }
 
-            sorted = sorted.filter(x => x.name.toLowerCase().includes(toSearch));
-        }
+    display.innerHTML = buildRadioList(sorted);
+},250);
 
-        display.innerHTML = buildRadioList(sorted);
-    },0);
+input.addEventListener('input', () => {
+    searchDebounced();
 });
 
 function buildRadioList(items) {
@@ -44,16 +46,10 @@ function buildRadioList(items) {
             `;
     }
 
-    let output = '';
-
-    for (let stream of items) {
-        output += `
-                <tr>
-                    <td>${stream.name}</td>
-                    <td><a href="${stream.website}" target="_blank">${stream.website}</a></td>
-                </tr>
-            `;
-    }
-
-    return output;
+    return items.map(stream => `
+        <tr>
+            <td>${stream.name}</td>
+            <td><a href="${stream.website}" target="_blank">${new URL(stream.website).host}</a></td>
+        </tr>
+    `).join('');
 }

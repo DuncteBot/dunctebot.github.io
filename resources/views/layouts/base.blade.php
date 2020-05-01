@@ -129,7 +129,7 @@
 </script>
 
 <!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" crossorigin="anonymous"></script>
 <script src="/js/main.js?time={!! $timestamp !!}"></script>
 @stack('scripts')
 <!--<script data-ad-client="ca-pub-6855340104827815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->

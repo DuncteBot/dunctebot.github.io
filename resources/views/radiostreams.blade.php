@@ -14,6 +14,7 @@
         <div class="row"></div>
         <div class="row">
             <div class="col s12">
+                <h6><strong>NOTE:</strong> This radio list is huge and search is slow atm, this is being worked on</h6>
                 <input id="search_input" type="text" placeholder="Search for radio streams">
             </div>
         </div>
@@ -23,7 +24,7 @@
                 <table class="striped">
                     <thead>
                     <tr>
-                        <th>Command</th>
+                        <th>Station name</th>
                         <th>Website</th>
                     </tr>
                     </thead>
@@ -39,7 +40,8 @@
 
 @push('scripts')
     <script>
-        const searchData = @insertRadioJson;
+        window.searchData = @insertRadioJson;
     </script>
-    <script src="/js/radioSearch.js?v=3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" crossorigin="anonymous" async defer></script>
+    <script src="/js/radioSearch.js?v=3" async defer></script>
 @endpush
