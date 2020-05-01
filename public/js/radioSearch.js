@@ -20,7 +20,7 @@ const display = document.getElementById('display');
 
 input.addEventListener('keyup', () => {
     setTimeout(() => {
-        let sorted = searchData.sort((a, b) => a.name.localeCompare(b.name));
+        let sorted = searchData;
 
         if (input.value) {
             const toSearch = input.value.toLowerCase();
@@ -48,7 +48,7 @@ function buildRadioList(items) {
 
     for (let stream of items) {
         output += `
-                <tr id="${stream.name}">
+                <tr>
                     <td>${stream.name}</td>
                     <td><a href="${stream.website}" target="_blank">${stream.website}</a></td>
                 </tr>

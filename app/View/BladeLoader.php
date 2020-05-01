@@ -103,23 +103,31 @@ class BladeLoader
                     return $element->name;
                 }, $s);
 
+                // fix all the quotes
+                $s = array_map(static function ($element) {
+                    unset($element->audio);
+
+                    return $element;
+                }, $s);
+
                 \array_multisort($mapped, SORT_ASC, $s);
 
                 \file_put_contents($compressedPath, \json_encode($s));
+//                \file_put_contents($compressedPath . '_test.json', \json_encode(\array_values(\array_unique($s, SORT_REGULAR))));
             }
 
             $streams = \json_decode(\file_get_contents($compressedPath));
             $output = '';
 
             foreach ($streams as $stream) {
-                $output .= "<tr id=\"$stream->name\"><td>$stream->name</td><td><a href=\"$stream->website\" target=\"_blank\">$stream->website</a></td></tr>";
+                $output .= "<tr><td>$stream->name</td><td><a href=\"$stream->website\" target=\"_blank\">$stream->website</a></td></tr>";
             }
 
             return $output;
         });
 
         $this->addDirective('insertRadioJson', static function () {
-            return \file_get_contents(__DIR__ . '/../../resources/radio_streams.json');
+            return \file_get_contents(__DIR__ . '/../../resources/radio_streams_flat.json');
         });
 
         /*$this->addDirective('timestamp', static function () {

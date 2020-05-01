@@ -41,5 +41,5 @@
     <script>
         const searchData = @insertRadioJson;
     </script>
-    <script src="/js/radioSearch.js"></script>
+    <script src="/js/radioSearch.js?v=3"></script>
 @endpush
