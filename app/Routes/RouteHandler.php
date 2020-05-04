@@ -44,8 +44,6 @@ class RouteHandler {
 
     public function suggest(BladeLoader $blade)
     {
-        any_empty("hello", 'world', 'test');
-
         return $blade->view('suggest');
     }
 

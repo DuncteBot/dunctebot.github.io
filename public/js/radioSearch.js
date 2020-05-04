@@ -21,8 +21,8 @@ const display = document.getElementById('display');
 const searchDebounced =  _.debounce(() => {
     let sorted = window.searchData;
 
-    if (input.value) {
-        const toSearch = input.value.toLowerCase();
+    if (input.value && input.value.trim()) {
+        const toSearch = input.value.toLowerCase().trim();
 
         sorted = sorted.filter(x => x.name.toLowerCase().includes(toSearch) || x.website.toLowerCase().includes(toSearch));
     }
@@ -49,7 +49,7 @@ function buildRadioList(items) {
     return items.map(stream => `
         <tr>
             <td>${stream.name}</td>
-            <td><a href="${stream.website}" target="_blank">${new URL(stream.website).host}</a></td>
+            <td><a href="${stream.website}" target="_blank">${stream.host}</a></td>
         </tr>
     `).join('');
 }

@@ -44,5 +44,5 @@
         id("size").innerHTML = window.searchData.length;
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" crossorigin="anonymous" async defer></script>
-    <script src="/js/radioSearch.js?v=3" async defer></script>
+    <script src="/js/radioSearch.js?v=4" async defer></script>
 @endpush

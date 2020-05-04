@@ -96,7 +96,7 @@ class BladeLoader
             $compressedPath = __DIR__ . '/../../resources/radio_streams_flat.json';
 
             // Sort and compress the file once for faster loads next time
-            if (!\file_exists($compressedPath)) {
+            if (!\file_exists($compressedPath) || true) {
                 $s = \json_decode(\file_get_contents(__DIR__ . '/../../resources/radio_streams.json'));
 
                 $mapped = array_map(static function ($element) {
@@ -104,15 +104,23 @@ class BladeLoader
                 }, $s);
 
                 // fix all the quotes
-                $s = array_map(static function ($element) {
+                $s = \array_map(static function ($element) {
                     unset($element->audio);
+
+                    $parsed = \parse_url($element->website);
+
+                    if ($parsed) {
+                        $element->host = $parsed['host'];
+                    } else {
+                        $element->host = $element->website;
+                    }
 
                     return $element;
                 }, $s);
 
                 \array_multisort($mapped, SORT_ASC, $s);
 
-                \file_put_contents($compressedPath, \json_encode($s));
+                \file_put_contents($compressedPath, \safe_json_encode($s));
 //                \file_put_contents($compressedPath . '_test.json', \json_encode(\array_values(\array_unique($s, SORT_REGULAR))));
             }
 
@@ -120,9 +128,7 @@ class BladeLoader
             $output = '';
 
             foreach ($streams as $stream) {
-                $domain = \parse_url($stream->website)['host'];
-
-                $output .= "<tr><td>$stream->name</td><td><a href=\"$stream->website\" target=\"_blank\">$domain</a></td></tr>";
+                $output .= "<tr><td>$stream->name</td><td><a href=\"$stream->website\" target=\"_blank\">$stream->host</a></td></tr>";
             }
 
             return $output;
