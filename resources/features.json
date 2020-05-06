@@ -17,7 +17,7 @@
     {
         "icon": "av_timer",
         "caption": "Reminders",
-        "description": "Remind yourself of everything, this can be ether in your dms or in a text channel"
+        "description": "Remind yourself of everything, this can be either in your dms or in a text channel"
     },
     {
         "icon": "fitness_center",
@@ -27,7 +27,7 @@
     {
         "icon": "code",
         "caption": "Open source",
-        "description": "No hidden backdoors in the bot, our code is open source so that you are about our security"
+        "description": "No hidden backdoors in the bot, our code is open source so that you can see how secure it is"
     },
     {
         "icon": "pets",
