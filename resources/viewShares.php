@@ -20,7 +20,7 @@ return [
     'prefix' => 'db!',
     'title' => 'DuncteBot',
     'description' => 'DuncteBot, a multi-propose bot for moderation and music',
-    'guildInvite' => 'https://dashboard.dunctebot.com/api/joinGuild',
+    'guildInvite' => 'https://dunctebot.link/server',
     'botInvite' => 'https://dunctebot.link/invite',
     'dashboardDomain' => 'https://dashboard.dunctebot.com/',
     'twitterUsername' => 'DuncteBot',
