@@ -138,6 +138,19 @@ class BladeLoader
             return \file_get_contents(__DIR__ . '/../../resources/radio_streams_flat.json');
         });
 
+        $this->addDirective('faq', static function () {
+            $json = \json_decode(\file_get_contents(__DIR__ . '/../../resources/faq.json'));
+            $output = '<ul class="collapsible">';
+
+            foreach ($json as $q => $a) {
+                $output .= "<li>
+                    <div class=\"collapsible-header\">$q</div>
+                    <div class=\"collapsible-body\"><span>$a</span></div></li>";
+            }
+
+            return $output . '</ul>';
+        });
+
         /*$this->addDirective('timestamp', static function () {
             return time();
         });*/

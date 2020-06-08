@@ -202,4 +202,9 @@ class RouteHandler {
     {
         return $blade->view('issuegenerator');
     }
+
+    public function faq(BladeLoader $blade)
+    {
+        return $blade->view('faq');
+    }
 }

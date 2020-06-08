@@ -49,10 +49,13 @@ class Router {
             $router->addRoute('GET', '/commands_botlist', 'commandsBotlist');
 //            $router->addRoute('GET', '/liveServerCount', 'liveServerCount');
 
-            # routes that are only linked from the bot
+            // routes that are only linked from the bot
             $router->addRoute('GET', '/flags', 'flags');
             $router->addRoute('GET', '/radiostreams', 'radiostreams');
             $router->addRoute('GET', '/issuegenerator', 'issueGenerator');
+
+            // Other links
+            $router->addRoute('GET', '/faq', 'faq');
         });
     }
 
