@@ -139,10 +139,15 @@ class BladeLoader
         });
 
         $this->addDirective('faq', static function () {
-            $json = \json_decode(\file_get_contents(__DIR__ . '/../../resources/faq.json'));
+            $files = glob(__DIR__ . '/../../resources/faq_questions/*.md');
             $output = '<ul class="collapsible">';
 
-            foreach ($json as $q => $a) {
+            foreach ($files as $file) {
+                $raw = \file_get_contents($file);
+                $split = \explode('{{---}}', $raw);
+                $q = \trim($split[0]);
+                $a = \trim($split[1]);
+
                 $output .= "<li>
                     <div class=\"collapsible-header\">$q</div>
                     <div class=\"collapsible-body\"><span>$a</span></div></li>";

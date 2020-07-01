@@ -52,19 +52,16 @@
 
                     <tbody>
                     <tr>
-                        <td>APHVNTOM</td>
-                    </tr>
-                    <tr>
-                        <td>Little</td>
-                    </tr>
-                    <tr>
-                        <td>Martin</td>
-                    </tr>
-                    <tr>
                         <td>p4ck3ts3nd3r</td>
                     </tr>
                     <tr>
-                        <td>Sikor</td>
+                        <td>Littlejavi</td>
+                    </tr>
+                    <tr>
+                        <td>Albert Phan</td>
+                    </tr>
+                    <tr>
+                        <td>Martin Stachowiak</td>
                     </tr>
                     </tbody>
                 </table>
