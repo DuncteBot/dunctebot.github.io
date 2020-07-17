@@ -16,12 +16,12 @@
  */
 
 return [
-    'timestamp' => '45123385774',
+    'timestamp' => '45123385775',
     'prefix' => 'db!',
     'title' => 'DuncteBot',
     'description' => 'DuncteBot, a multi-propose bot for moderation and music',
-    'guildInvite' => 'https://dashboard.dunctebot.com/api/joinGuild',
-    'botInvite' => 'https://lnk.dunctebot.com/invite',
+    'guildInvite' => 'https://dunctebot.link/server',
+    'botInvite' => 'https://dunctebot.link/invite',
     'dashboardDomain' => 'https://dashboard.dunctebot.com/',
     'twitterUsername' => 'DuncteBot',
     'color' => '#0751c6',
