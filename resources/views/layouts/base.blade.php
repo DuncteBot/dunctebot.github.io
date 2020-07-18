@@ -92,6 +92,7 @@
                 <ul>
                     <li><a class="grey-text text-lighten-3" href="{!! $botInvite !!}" target="_blank">Invite bot</a></li>
                     <li><a class="grey-text text-lighten-3" href="{!! $guildInvite !!}" target="_blank">Join server</a></li>
+                    <li><a class="grey-text text-lighten-3" href="/privacy">Privacy Policy</a></li>
                     <li><a class="grey-text text-lighten-3" href="https://paypal.me/duncte123"
                            target="_blank">Donate</a></li>
                     <li><a class="grey-text text-lighten-3" href="https://github.com/DuncteBot/dunctebot.github.io"

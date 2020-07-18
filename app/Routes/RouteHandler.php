@@ -207,4 +207,9 @@ class RouteHandler {
     {
         return $blade->view('faq');
     }
+
+    public function privacy(BladeLoader $blade)
+    {
+        return $blade->view('privacy');
+    }
 }
