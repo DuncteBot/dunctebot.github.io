@@ -33,23 +33,35 @@
 
            <h2>Consent</h2>
 
-           <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
+           <p>By using our website and our discord bot, you hereby consent to our Privacy Policy and agree to its terms.</p>
 
            <h2>Information we collect</h2>
 
-           <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.</p>
-           <p>If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.</p>
-           <p>When you log in with discord the following items will be made known to us: Your username and tag, the guilds that you are in</p>
+           <p>The following data points are collected from users:</p>
+
+           <ul>
+               <li>Server ids</li>
+               <li>Text channel ids</li>
+               <li>User ids</li>
+               <li>User tags (eg Example#0000)</li>
+               <li>The reminders that a user created</li>
+               <li>The custom settings a user can set for a guild</li>
+               <li>The custom pronouns that a user can set</li>
+           </ul>
+
+           <h2>Why we need your information</h2>
+
+           <p>We need the information described above to provide the basic services we offer to you.</p>
 
            <h2>How we use your information</h2>
 
            <p>We use the information we collect in various ways, including to:</p>
 
            <ul>
-               <li>Provide, operate, and maintain our website</li>
-               <li>Understand and analyze how you use our website</li>
-               <li>Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes</li>
+               <li>Provide, operate, and maintain our website and discord bot</li>
            </ul>
+
+           <p>WE DO NOT SHARE ANY OF THE STORED INFORMATION WITH ANY PARTNERS</p>
 
            <h2>Log Files</h2>
 
@@ -61,15 +73,20 @@
 
            <p>For more general information on cookies, please read <a href="https://www.cookieconsent.com/what-are-cookies/">"What Are Cookies"</a>.</p>
 
+           <p>If you have any concerns about your data you can always contact us on discord.</p>
 
+           <h2>Data removal</h2>
 
-           <h2>Advertising Partners Privacy Policies</h2>
+           <p>The data removal process goes in two ways</p>
 
-           <P>You may consult this list to find the Privacy Policy for each of the advertising partners of DuncteBot.</p>
+           <ul>
+               <li>Discord server data (like custom server settings and temp bans)</li>
+               <li>Discord user data (like reminders and pronouns)</li>
+           </ul>
 
-           <p>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on DuncteBot, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
+           <p>To get server data removed please contact us on discord, note that the data will be reset to the defaults automatically if the bot is still in your server.</p>
 
-           <p>Note that DuncteBot has no access to or control over these cookies that are used by third-party advertisers.</p>
+           <p>To get user data removed please contact us on discord.</p>
 
            <h2>Third Party Privacy Policies</h2>
 

@@ -55,13 +55,7 @@
                         <td>p4ck3ts3nd3r</td>
                     </tr>
                     <tr>
-                        <td>Littlejavi</td>
-                    </tr>
-                    <tr>
                         <td>Albert Phan</td>
-                    </tr>
-                    <tr>
-                        <td>Martin Stachowiak</td>
                     </tr>
                     </tbody>
                 </table>
