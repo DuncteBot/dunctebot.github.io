@@ -44,12 +44,6 @@
         <div class="row">
             <div class="col offset-s3 s6">
                 <table class="striped centered z-depth-2">
-                    {{--<thead>
-                    <tr>
-                        <th>Username</th>
-                    </tr>
-                    </thead>--}}
-
                     <tbody>
                     <tr>
                         <td>p4ck3ts3nd3r</td>

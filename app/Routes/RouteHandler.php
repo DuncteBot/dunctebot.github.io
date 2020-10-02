@@ -120,11 +120,6 @@ class RouteHandler {
         return $blade->view('commands_botlist');
     }
 
-    public function liveServerCount(BladeLoader $blade)
-    {
-        return $blade->view('livecount');
-    }
-
     public function flags(BladeLoader $blade)
     {
         return $blade->view('flags', [
