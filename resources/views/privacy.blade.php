@@ -42,6 +42,7 @@
            <ul>
                <li>Server ids</li>
                <li>Text channel ids</li>
+               <li>Message ids</li>
                <li>User ids</li>
                <li>User tags (eg Example#0000)</li>
                <li>The reminders that a user created</li>
