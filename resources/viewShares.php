@@ -25,6 +25,4 @@ return [
     'dashboardDomain' => 'https://dashboard.dunctebot.com/',
     'twitterUsername' => 'DuncteBot',
     'color' => '#0751c6',
-//    'apiPrefix' => 'https://dashboard.dunctebot.com/api',
-//    'apiPrefix' => 'http://localhost:2000/api',
 ];

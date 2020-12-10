@@ -46,10 +46,13 @@
                 <table class="striped centered z-depth-2">
                     <tbody>
                     <tr>
-                        <td>p4ck3ts3nd3r</td>
+                        <td>Albert Phan</td>
                     </tr>
                     <tr>
-                        <td>Albert Phan</td>
+                        <td>anthony sees</td>
+                    </tr>
+                    <tr>
+                        <td>p4ck3ts3nd3r</td>
                     </tr>
                     </tbody>
                 </table>
