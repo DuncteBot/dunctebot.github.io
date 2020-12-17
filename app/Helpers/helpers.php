@@ -49,6 +49,79 @@ if (!function_exists('get_client')) {
     }
 }
 
+if (!function_exists('fetch_patrons')) {
+    function fetch_patrons(): array
+    {
+        // TODO
+        //  - cache response for a day
+
+        $cachePath = __DIR__ . '/../../storage/app/cache/patreon-tokens.json';
+
+        if (!file_exists($cachePath)) {
+            die('Tokens file not present, please contact duncte123');
+        }
+
+        $tokens = json_decode(file_get_contents($cachePath));
+
+        $fetchAccessToken = static function() use ($tokens, $cachePath): object {
+            $response = get_client()->post('https://www.patreon.com/api/oauth2/token', [
+                \GuzzleHttp\RequestOptions::QUERY => [
+                    'grant_type' => 'refresh_token',
+                    'refresh_token' => $tokens->refresh_token,
+                    'client_id' =>  env('PATREON_CLIENT_ID'),
+                    'client_secret' =>  env('PATREON_CLIENT_SECRET'),
+                ],
+            ]);
+
+            $newTokens = $response->getBody()->getContents();
+
+            file_put_contents($cachePath, $newTokens);
+
+            return json_decode($newTokens);
+        };
+
+        $fetchPatrons = static function($accessToken): array {
+            // URL is specific to patreon.com/DuncteBot
+            $response = get_client()->get('https://www.patreon.com/api/oauth2/v2/campaigns/973568/members', [
+                \GuzzleHttp\RequestOptions::HEADERS => [
+                    'Authorization' => 'Bearer ' . $accessToken,
+                ],
+                \GuzzleHttp\RequestOptions::QUERY => [
+                    'fields[member]' => 'full_name,patron_status',
+                    'page[count]' => '1000',
+                ],
+            ]);
+
+            $patrons = json_decode($response->getBody())->data;
+            $filtered = array_filter($patrons, static function ($patron) {
+                return $patron->attributes->patron_status === 'active_patron';
+            });
+            $mapped = array_map(static function($patron) {
+                return $patron->attributes->full_name;
+                }, $filtered);
+
+            sort($mapped);
+
+            return $mapped;
+        };
+
+        try {
+            return $fetchPatrons($tokens->access_token);
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+//            var_dump($e);
+
+            // Unauthorized
+            if ($e->getResponse()->getStatusCode() === 401) {
+                $data = $fetchAccessToken();
+
+                return $fetchPatrons($data->access_token);
+            } else {
+                return ['(failed to fetch)'];
+            }
+        }
+    }
+}
+
 if (!function_exists('verify_captcha')) {
     function verify_captcha(string $token): bool
     {

@@ -21,7 +21,7 @@ use App\View\BladeLoader;
 
 class RouteHandler {
 
-    public function home(BladeLoader $blade)
+    public function home(BladeLoader $blade): string
     {
         $commands = \json_decode(\file_get_contents(__DIR__ . '/../../resources/commands.json'));
         $rand = \array_rand($commands);
@@ -37,17 +37,17 @@ class RouteHandler {
         ]);
     }
 
-    public function commands(BladeLoader $blade)
+    public function commands(BladeLoader $blade): string
     {
         return $blade->view('commands');
     }
 
-    public function suggest(BladeLoader $blade)
+    public function suggest(BladeLoader $blade): string
     {
         return $blade->view('suggest');
     }
 
-    public function submitSuggest()
+    public function submitSuggest(): string
     {
         $in = file_get_contents('php://input');
 
@@ -110,17 +110,23 @@ class RouteHandler {
         ]);
     }
 
-    public function donate(BladeLoader $blade)
+    public function donate(BladeLoader $blade): string
     {
-        return $blade->view('donate');
+        header('Cache-Control: public, max-age=604800', true);
+
+        $patronNames = fetch_patrons();
+
+        return $blade->view('donate', [
+            'patrons' => $patronNames,
+        ]);
     }
 
-    public function commandsBotlist(BladeLoader $blade)
+    public function commandsBotlist(BladeLoader $blade): string
     {
         return $blade->view('commands_botlist');
     }
 
-    public function flags(BladeLoader $blade)
+    public function flags(BladeLoader $blade): string
     {
         return $blade->view('flags', [
             'flags' => [
@@ -188,22 +194,22 @@ class RouteHandler {
         ]);
     }
 
-    public function radiostreams(BladeLoader $blade)
+    public function radiostreams(BladeLoader $blade): string
     {
         return $blade->view('radiostreams');
     }
 
-    public function issueGenerator(BladeLoader $blade)
+    public function issueGenerator(BladeLoader $blade): string
     {
         return $blade->view('issuegenerator');
     }
 
-    public function faq(BladeLoader $blade)
+    public function faq(BladeLoader $blade): string
     {
         return $blade->view('faq');
     }
 
-    public function privacy(BladeLoader $blade)
+    public function privacy(BladeLoader $blade): string
     {
         return $blade->view('privacy');
     }

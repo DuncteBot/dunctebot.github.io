@@ -38,22 +38,18 @@
     <section>
         <div class="flow-text row">
             <p>Our Patrons</p>
-            <p>Thanks to our patrons we can improve the bot even more</p>
+            <p>Thanks to our patrons we can continue to improve the bot</p>
         </div>
 
         <div class="row">
             <div class="col offset-s3 s6">
                 <table class="striped centered z-depth-2">
                     <tbody>
-                    <tr>
-                        <td>Albert Phan</td>
-                    </tr>
-                    <tr>
-                        <td>anthony sees</td>
-                    </tr>
-                    <tr>
-                        <td>p4ck3ts3nd3r</td>
-                    </tr>
+                    @foreach($patrons as $patron)
+                        <tr>
+                            <td>{{ $patron }}</td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
