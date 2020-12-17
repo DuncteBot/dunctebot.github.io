@@ -98,7 +98,7 @@ if (!function_exists('fetch_patrons')) {
             });
             $mapped = array_map(static function($patron) {
                 return $patron->attributes->full_name;
-                }, $filtered);
+            }, $filtered);
 
             sort($mapped);
 
