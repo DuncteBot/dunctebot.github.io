@@ -112,7 +112,7 @@ class RouteHandler {
 
     public function donate(BladeLoader $blade): string
     {
-        header('Cache-Control: public, max-age=604800', true);
+        header('Cache-Control: public, max-age=604800, must-revalidate', true);
 
         $patronNames = fetch_patrons();
 
