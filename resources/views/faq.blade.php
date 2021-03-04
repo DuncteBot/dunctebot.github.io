@@ -7,7 +7,7 @@
         <div class="col s12">
             <h3>FAQ</h3>
             <p>Here are some commonly asked questions, if these answers do not answer your question please join our <a
-                    href="https://dunctebot.link/server">discord server</a> for support</p>
+                    href="https://duncte.bot/server">discord server</a> for support</p>
         </div>
     </div>
 

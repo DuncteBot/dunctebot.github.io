@@ -28,4 +28,9 @@ $blade = new BladeLoader(
 );
 $router = new Router($blade);
 
-$router->handle();
+try {
+    $router->handle();
+} catch (Exception $e) {
+    //var_dump($e);
+    echo 'Website has blown up.';
+}
