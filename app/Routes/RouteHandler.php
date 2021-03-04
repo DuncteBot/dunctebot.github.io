@@ -116,8 +116,13 @@ class RouteHandler {
 
         $patronNames = fetch_patrons();
 
+        $created = new \DateTime('2016-08-03');
+        $now = new \DateTime();
+        $diff = $now->diff($created);
+
         return $blade->view('donate', [
             'patrons' => $patronNames,
+            'years' => $diff->y,
         ]);
     }
 

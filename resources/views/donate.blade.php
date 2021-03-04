@@ -20,7 +20,7 @@
     <section>
         <div class="flow-text">
             <h1>Donate</h1>
-            <p>For the past 4 years we've been working on DuncteBot and creating awesome features for the users.
+            <p>For the past {!! $years !!} years we've been working on DuncteBot and creating awesome features for the users.
                 We want to keep the bot free and without ads on the website because just like you, we dislike ads.
                 Donations are our only source of income and help keep the bot online and free.
             </p>
