@@ -52,14 +52,17 @@
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114140362-3"></script>
+{{--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114140362-3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-114140362-3');
-</script>
+</script>--}}
+<!-- Cloudflare Web Analytics -->
+<script async defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "25f915de0b044c90a1fe610906b1ca19", "spa": false}'></script>
+<!-- End Cloudflare Web Analytics -->
 
 @stack('scripts')
 </body>
