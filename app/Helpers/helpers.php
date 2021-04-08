@@ -15,6 +15,8 @@
  *      limitations under the License.
  */
 
+use GuzzleHttp\RequestOptions;
+
 if (!function_exists('json_response')) {
     function json_response(array $content): string
     {
@@ -65,7 +67,7 @@ if (!function_exists('fetch_patrons')) {
 
         $fetchAccessToken = static function() use ($tokens, $cachePath): object {
             $response = get_client()->post('https://www.patreon.com/api/oauth2/token', [
-                \GuzzleHttp\RequestOptions::QUERY => [
+                RequestOptions::QUERY => [
                     'grant_type' => 'refresh_token',
                     'refresh_token' => $tokens->refresh_token,
                     'client_id' =>  env('PATREON_CLIENT_ID'),
@@ -83,10 +85,10 @@ if (!function_exists('fetch_patrons')) {
         $fetchPatrons = static function($accessToken): array {
             // URL is specific to patreon.com/DuncteBot
             $response = get_client()->get('https://www.patreon.com/api/oauth2/v2/campaigns/973568/members', [
-                \GuzzleHttp\RequestOptions::HEADERS => [
+                RequestOptions::HEADERS => [
                     'Authorization' => 'Bearer ' . $accessToken,
                 ],
-                \GuzzleHttp\RequestOptions::QUERY => [
+                RequestOptions::QUERY => [
                     'fields[member]' => 'full_name,patron_status',
                     'page[count]' => '1000',
                 ],
