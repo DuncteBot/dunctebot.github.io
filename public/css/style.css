@@ -1,5 +1,5 @@
 /*
- *      Copyright 2017-2020 Duncan "duncte123" Sterken
+ *      Copyright 2017 Duncan "duncte123" Sterken
  *
  *      Licensed under the Apache License, Version 2.0 (the "License");
  *      you may not use this file except in compliance with the License.
@@ -67,7 +67,11 @@ main {
     background-color: #6f7b82;
 }
 
-table.striped > tbody > tr:nth-child(odd) {
+table.striped > tbody > tr > th {
+    background-color: #36393f;
+}
+
+table.striped > tbody > tr:nth-child(odd) > td {
     background-color: #6f7b82;
 }
 

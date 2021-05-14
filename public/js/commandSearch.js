@@ -1,5 +1,7 @@
+// noinspection JSUnfilteredForInLoop
+
 /*
- *      Copyright 2017-2020 Duncan "duncte123" Sterken
+ *      Copyright 2017 Duncan "duncte123" Sterken
  *
  *      Licensed under the Apache License, Version 2.0 (the "License");
  *      you may not use this file except in compliance with the License.
@@ -19,20 +21,40 @@ const input = document.getElementById('search_input');
 const display = document.getElementById('display');
 
 input.addEventListener('keyup', () => {
-    let sorted = commandsRaw.sort((a, b) => a.name.localeCompare(b.name));
-
-    if (input.value) {
-        const toSearch = input.value.replace(prefix, '').toLowerCase();
-
-        sorted = sorted.filter(x => x.name.includes(toSearch) || x.aliases.some(a => a.includes(toSearch)));
+    if (!input.value) {
+        display.innerHTML = buildCommandList(commandsRaw);
+        return;
     }
 
-    display.innerHTML = buildCommandList(sorted);
+    const toSearch = input.value.replace(prefix, '').toLowerCase();
+
+    // first search in all commands
+    let sorted = Object.entries(commandsRaw).map(([category, commands]) => {
+        return [
+            category,
+            commands.filter((x) => {
+                return x.name.includes(toSearch) || x.aliases.some(a => a.includes(toSearch));
+            })
+        ];
+    });
+
+    // then search in categories
+    if (sorted.every(([_, commands]) => commands.length === 0)) {
+        sorted = Object.entries(commandsRaw).filter(([category]) => category.includes(toSearch));
+    }
+
+    if (sorted.every(([_, commands]) => commands.length === 0)) {
+        display.innerHTML = buildCommandList(null);
+        return;
+    }
+
+    display.innerHTML = buildCommandList(Object.fromEntries(sorted));
 });
 
-function buildCommandList(items) {
+const ucfirst = (string) => string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 
-    if (!items.length) {
+function buildCommandList(items) {
+    if (!items) {
         return `
                 <tr>
                     <td colspan="2">
@@ -44,13 +66,24 @@ function buildCommandList(items) {
 
     let output = '';
 
-    for (let command of items) {
-        output += `
+    for (const category in items) {
+        if (!items[category] || !items[category].length) {
+            continue;
+        }
+
+        output += `<tr>
+                      <th colspan="2" class="reset">
+                        <h5><strong>${ucfirst(category)} Commands</strong></h5><hr/>
+                      </th>
+                    </tr>`;
+        for (const command of items[category]) {
+            output += `
                 <tr id="${command.name}">
                     <td>${prefix}${command.name}</td>
                     <td>${command.help}</td>
                 </tr>
             `;
+        }
     }
 
     return output;

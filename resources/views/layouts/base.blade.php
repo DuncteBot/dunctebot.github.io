@@ -131,6 +131,9 @@
 <!-- Cloudflare Web Analytics -->
 <script async defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "25f915de0b044c90a1fe610906b1ca19", "spa": false}'></script>
 <!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "085d795bab7548109bb66dd76d87371a", "spa": false}'></script>
+<!-- End Cloudflare Web Analytics -->
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" crossorigin="anonymous"></script>

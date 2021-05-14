@@ -23,8 +23,9 @@ class RouteHandler {
 
     public function home(BladeLoader $blade): string
     {
-        $commands = \json_decode(\file_get_contents(__DIR__ . '/../../resources/commands.json'));
-        $rand = \array_rand($commands);
+        $commands = \json_decode(\file_get_contents(__DIR__ . '/../../resources/commands.json'), true);
+        $mappedCommands = \array_merge(...\array_values($commands));
+        $rand = \array_rand($mappedCommands);
 
         $features = \json_decode(\file_get_contents(__DIR__ . '/../../resources/features.json'));
         $randomFeatures = \array_rand($features, 3);
@@ -32,7 +33,7 @@ class RouteHandler {
         \shuffle($mappedFeatures);
 
         return $blade->view('home', [
-            'randomCmd' => $commands[$rand]->name,
+            'randomCmd' => $mappedCommands[$rand]['name'],
             'features' => $mappedFeatures,
         ]);
     }

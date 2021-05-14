@@ -14,19 +14,16 @@
         <div class="row"></div>
         <div class="row">
             <div class="col s12">
-                <input id="search_input" type="text" placeholder="Search for commands">
+                <div class="input-field">
+                    <label for="search_input">Search for commands</label>
+                    <input id="search_input" type="text">
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col s12">
                 <table class="striped">
-                    <thead>
-                    <tr>
-                        <th>Command</th>
-                        <th>Description</th>
-                    </tr>
-                    </thead>
 
                     <tbody id="display">
                         @generateCommands
@@ -42,5 +39,5 @@
         const commandsRaw = @insertCommandsJson;
         const prefix = '{!! $prefix !!}';
     </script>
-    <script src="/js/commandSearch.js"></script>
+    <script src="/js/commandSearch.js?v=2"></script>
 @endpush

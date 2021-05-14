@@ -1,6 +1,6 @@
 <?php
 /**
- *      Copyright 2017-2020 Duncan "duncte123" Sterken
+ *      Copyright 2017 Duncan "duncte123" Sterken
  *
  *      Licensed under the Apache License, Version 2.0 (the "License");
  *      you may not use this file except in compliance with the License.
@@ -77,11 +77,15 @@ class BladeLoader
 
         $prefix = $shares['prefix'];
         $this->addDirective('generateCommands', static function () use ($prefix) {
-            $commands = \json_decode(\file_get_contents(__DIR__ . '/../../resources/commands.json'));
+            $commandsWithCategory = \json_decode(\file_get_contents(__DIR__ . '/../../resources/commands.json'));
             $output = '';
 
-            foreach ($commands as $command) {
-                $output .= '<tr id="' . $command->name . '"><td>' . $prefix . $command->name . '</td><td>' . $command->help . '</td></tr>';
+            foreach ($commandsWithCategory as $category => $commands) {
+                $output .= '<tr><th colspan="2"><h5><strong>' . ucfirst($category) . ' Commands</strong></h5><hr/></th></tr>';
+
+                foreach ($commands as $command) {
+                    $output .= '<tr id="' . $command->name . '"><td>' . $prefix . $command->name . '</td><td>' . $command->help . '</td></tr>';
+                }
             }
 
             return $output;
@@ -96,7 +100,7 @@ class BladeLoader
             $compressedPath = __DIR__ . '/../../resources/radio_streams_flat.json';
 
             // Sort and compress the file once for faster loads next time
-            if (!\file_exists($compressedPath) || true) {
+            if (!\file_exists($compressedPath)) {
                 $s = \json_decode(\file_get_contents(__DIR__ . '/../../resources/radio_streams.json'));
 
                 $mapped = array_map(static function ($element) {
