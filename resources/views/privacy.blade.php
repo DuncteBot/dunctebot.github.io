@@ -48,21 +48,25 @@
                <li>The reminders that a user created</li>
                <li>The custom settings a user can set for a guild</li>
                <li>The custom pronouns that a user can set</li>
+               <li>Message content (ONLY if message logging is enabled)</li>
            </ul>
 
            <h2>Why we need your information</h2>
 
            <p>We need the information described above to provide the basic services we offer to you.</p>
+           <p>We store the content of messages when message logging is enabled to provided the differences between edited messages and show the content of deleted messages.
+           Since discord does not provide this data we are required to store it ourselves. <strong>All message content is stored in an encrypted database.</strong></p>
 
            <h2>How we use your information</h2>
 
-           <p>We use the information we collect in various ways, including to:</p>
+           <p>We use the information we collect in the following ways:</p>
 
            <ul>
                <li>Provide, operate, and maintain our website and discord bot</li>
+               <li>Provide all the functionalities that the bot has to offer</li>
            </ul>
 
-           <p>WE DO NOT SHARE ANY OF THE STORED INFORMATION WITH ANY PARTNERS</p>
+           <p>WE DO NOT SHARE ANY OF THE STORED INFORMATION WITH ANY THIRD PARTIES</p>
 
            <h2>Log Files</h2>
 
@@ -83,11 +87,14 @@
            <ul>
                <li>Discord server data (like custom server settings and temp bans)</li>
                <li>Discord user data (like reminders and pronouns)</li>
+               <li>Message content data</li>
            </ul>
 
            <p>To get server data removed please contact us on discord, note that the data will be reset to the defaults automatically if the bot is still in your server.</p>
 
            <p>To get user data removed please contact us on discord.</p>
+
+           <p>All message content will automatically be removed after 2 weeks.</p>
 
            <h2>Third Party Privacy Policies</h2>
 
