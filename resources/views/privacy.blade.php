@@ -25,7 +25,7 @@
     <div class="row">
         <!-- Lol I used a generator https://www.privacypolicygenerator.info/live.php?token=dBPJO0OG2Btagw7tM99qJfp4q0cGZ8A4 -->
        <div class="col s12">
-           <p>At DuncteBot, accessible from dunctebot.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by DuncteBot and how we use it.</p>
+           <p>At DuncteBot, accessible from dunctebot.com and duncte.bot, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by DuncteBot and how we use it.</p>
 
            <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
 
