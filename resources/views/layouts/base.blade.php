@@ -55,7 +55,7 @@
                         <li @checkActiveClass('Home') ><a href="/">Home</a></li>
                         <li @checkActiveClass('List of commands') ><a href="/commands">Commands</a></li>
                         <li @checkActiveClass('Leave a suggestion') ><a href="/suggest">Suggest</a></li>
-                        <li @checkActiveClass('Donate to DuncteBot') ><a href="/donate">Donators</a></li>
+                        <li @checkActiveClass('Donate to DuncteBot') ><a href="/donate">Supporters</a></li>
                         <li><a href="{!! $dashboardDomain !!}">Dashboard</a></li>
                     </ul>
                 </div>
@@ -67,7 +67,7 @@
         <li @checkActiveClass('Home') ><a class="discord-text text-full-white" href="/">Home</a></li>
         <li @checkActiveClass('List of commands') ><a class="discord-text text-full-white" href="/commands">Commands</a></li>
         <li @checkActiveClass('Leave a suggestion') ><a class="discord-text text-full-white" href="/suggest">Suggest</a></li>
-        <li @checkActiveClass('Donate to DuncteBot') ><a class="discord-text text-full-white" href="/donate">Donators</a></li>
+        <li @checkActiveClass('Donate to DuncteBot') ><a class="discord-text text-full-white" href="/donate">Supporters</a></li>
         <li><a class="discord-text text-full-white" href="{!! $dashboardDomain !!}">Dashboard</a></li>
     </ul>
 </header>
